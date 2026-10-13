@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="BLL/BLL.csproj" Id="b809f467-c79a-42d1-85f4-40f0de09d323" />
   <Project Path="DAL/DAL.csproj" />
+  <Project Path="DTO/DTO.csproj" />
   <Project Path="projectApi/projectApi.csproj" />
 </Solution>

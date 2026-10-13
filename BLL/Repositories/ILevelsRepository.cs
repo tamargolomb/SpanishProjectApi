@@ -9,5 +9,10 @@ namespace BLL.Repositories
 {
     public interface ILevelsRepository
     {
+        void Add(Levels Level);
+        List<Levels> GetAll();
+        Levels GetById(int id);
+        void Update(Levels Level);
+        void Delete(int id);
     }
 }

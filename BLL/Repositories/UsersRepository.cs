@@ -7,7 +7,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BLL.Repositories
 {
-    public class UsersRepository
+    public class UsersRepository: IUsersRepository
     {
+        public void Add(Users User)
+        {
+
+        }
+        public List<Users> GetAll()
+        {
+
+        }
+        public Users GetById(int id)
+        {
+
+        }
+        public void Update(Users User)
+        {
+
+        }
+        public void Delete(int id)
+        {
+
+        }
     }
 }

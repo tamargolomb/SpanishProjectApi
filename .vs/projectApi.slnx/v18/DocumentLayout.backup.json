@@ -3,44 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261011160057_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DAL\\Migrations\\20261011160057_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\repositories\\reviewsandratingsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\reviewsandratingsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\spanishdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\spanishdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\repositories\\ireviewsandratingsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\ireviewsandratingsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\repositories\\icategoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\icategoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\repositories\\levelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\levelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261011154546_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DAL\\Migrations\\20261011154546_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\reviewsandratings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\reviewsandratings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\levels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\levels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\lessons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\lessons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\repositories\\ilevelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\ilevelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,127 +35,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20261011160057_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261011160057_InitialCreate.cs",
-              "RelativeDocumentMoniker": "DAL\\Migrations\\20261011160057_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261011160057_InitialCreate.cs",
-              "RelativeToolTip": "DAL\\Migrations\\20261011160057_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ReviewsAndRatingsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\ReviewsAndRatingsRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\ReviewsAndRatingsRepository.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\ReviewsAndRatingsRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\ReviewsAndRatingsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T16:00:57.758Z",
+              "WhenOpened": "2026-10-13T21:12:21.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IReviewsAndRatingsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\IReviewsAndRatingsRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\IReviewsAndRatingsRepository.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\IReviewsAndRatingsRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\IReviewsAndRatingsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T21:10:31.993Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Program.cs",
-              "RelativeDocumentMoniker": "projectApi\\Program.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Program.cs",
-              "RelativeToolTip": "projectApi\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAIAAAAvAAAAAAAAAA==",
+              "Title": "LevelsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\LevelsRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\LevelsRepository.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\LevelsRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\LevelsRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T18:38:31.502Z",
+              "WhenOpened": "2026-10-13T21:09:40.596Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "20261011154546_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261011154546_InitialCreate.cs",
-              "RelativeDocumentMoniker": "DAL\\Migrations\\20261011154546_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261011154546_InitialCreate.cs",
-              "RelativeToolTip": "DAL\\Migrations\\20261011154546_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ILevelsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\ILevelsRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\ILevelsRepository.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\ILevelsRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\ILevelsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T15:45:46.544Z",
+              "WhenOpened": "2026-10-13T21:08:51.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\appsettings.json",
-              "RelativeDocumentMoniker": "projectApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\appsettings.json",
-              "RelativeToolTip": "projectApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-06T08:17:24.792Z",
+              "Title": "ICategoriesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\ICategoriesRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\ICategoriesRepository.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Repositories\\ICategoriesRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\ICategoriesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T20:57:33.41Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Lessons.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Lessons.cs",
-              "RelativeDocumentMoniker": "DAL\\Lessons.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Lessons.cs",
-              "RelativeToolTip": "DAL\\Lessons.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA4wAkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:13:34.92Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Levels.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Levels.cs",
-              "RelativeDocumentMoniker": "DAL\\Levels.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Levels.cs",
-              "RelativeToolTip": "DAL\\Levels.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAmwAkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:14:42.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SpanishDB.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\SpanishDB.cs",
-              "RelativeDocumentMoniker": "DAL\\SpanishDB.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\SpanishDB.cs",
-              "RelativeToolTip": "DAL\\SpanishDB.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAABQAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T18:35:17.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Categories.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Categories.cs",
-              "RelativeDocumentMoniker": "DAL\\Categories.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Categories.cs",
-              "RelativeToolTip": "DAL\\Categories.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:04:32.112Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReviewsAndRatings.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\ReviewsAndRatings.cs",
-              "RelativeDocumentMoniker": "DAL\\ReviewsAndRatings.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\ReviewsAndRatings.cs",
-              "RelativeToolTip": "DAL\\ReviewsAndRatings.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:15:45.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Users.cs",
-              "RelativeDocumentMoniker": "DAL\\Users.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Users.cs",
-              "RelativeToolTip": "DAL\\Users.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:17:14.833Z"
             }
           ]
         }

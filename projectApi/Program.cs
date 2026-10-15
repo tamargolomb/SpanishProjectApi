@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using DAL;
 using Microsoft.Extensions.DependencyInjection;
+using BLL.Mapper;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,7 +14,10 @@ builder.Services.AddDbContext<SpanishDB>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 builder.Configuration.GetConnectionString("SpanishProject");
-
+builder.Services.AddAutoMapper( cfg =>
+{
+    cfg.AddProfile<MappingProfile>();
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

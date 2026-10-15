@@ -9,7 +9,7 @@ namespace DTO.General
     //לשמירת בקשת חיפוש והעברתה לשרת
     public class LessonSearchDTO
     {
-        public string? SearchText { get; set; }
+        public string? LessonTitle { get; set; }
 
         public int? CategoryId { get; set; }
 

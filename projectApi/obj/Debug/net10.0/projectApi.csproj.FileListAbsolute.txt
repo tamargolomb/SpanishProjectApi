@@ -334,3 +334,14 @@ C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\refint\pro
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\projectApi.pdb
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\projectApi.genruntimeconfig.cache
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\ref\projectApi.dll
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.AssemblyInfo.cs
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.sourcelink.json
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.dll
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\refint\projectApi.dll
+C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\projectApi\obj\Debug\net10.0\projectApi.pdb

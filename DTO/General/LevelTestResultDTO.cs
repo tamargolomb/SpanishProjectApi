@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO.General
 {
-
+    //מגיע מהagent אז כרגע לא התייחסתי לזה
     public class LevelTestResultDTO
     {
         public int Score { get; set; }

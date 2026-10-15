@@ -15,7 +15,7 @@ namespace DAL
         public int LevelId { get; set; }
         public DateTime JoinDate { get; set; }
         public int Score { get; set; }
-        public  List<Lesson> Lessons { get; set; }
+        public  List<Levels> Levels { get; set; }
         public  List<ReviewsAndRatings> ReviewsAndRatings { get; set; }
     }
 }

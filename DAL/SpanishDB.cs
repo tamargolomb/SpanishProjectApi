@@ -19,16 +19,28 @@ namespace DAL
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Levels> Levels { get; set; }
         public DbSet<ReviewsAndRatings> ReviewsAndRatings { get; set; }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+
+        //    modelBuilder.Entity<ReviewsAndRatings>()
+        //        .HasOne(r => r.User)
+        //        .WithMany()
+        //        .HasForeignKey(r => r.UserId)
+        //        .OnDelete(DeleteBehavior.NoAction);
+        //}
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ReviewsAndRatings>()
                 .HasOne(r => r.User)
-                .WithMany()
+                .WithMany(u => u.ReviewsAndRatings)
                 .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
         }
+
     }
-  
-    }
+
+}

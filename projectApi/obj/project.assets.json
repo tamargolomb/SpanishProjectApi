@@ -3318,23 +3318,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\גולומב\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\projectApi\\projectApi.csproj",
+      "projectUniqueName": "C:\\Users\\גולומב\\Desktop\\projectApi\\projectApi\\projectApi.csproj",
       "projectName": "projectApi",
-      "projectPath": "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\projectApi\\projectApi.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\projectApi\\obj\\",
+      "projectPath": "C:\\Users\\גולומב\\Desktop\\projectApi\\projectApi\\projectApi.csproj",
+      "packagesPath": "C:\\Users\\גולומב\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\גולומב\\Desktop\\projectApi\\projectApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\גולומב\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3351,14 +3351,14 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\BLL\\BLL.csproj"
+            "C:\\Users\\גולומב\\Desktop\\projectApi\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\גולומב\\Desktop\\projectApi\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\DAL\\DAL.csproj"
+            "C:\\Users\\גולומב\\Desktop\\projectApi\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\גולומב\\Desktop\\projectApi\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\שנה ב\\פרויקט\\פרויקט\\SpanishProjectApi\\DTO\\DTO.csproj"
+            "C:\\Users\\גולומב\\Desktop\\projectApi\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\גולומב\\Desktop\\projectApi\\DTO\\DTO.csproj"
             }
           }
         }
@@ -3424,7 +3424,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

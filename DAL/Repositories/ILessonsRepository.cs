@@ -9,8 +9,8 @@ namespace DAL.Repositories
     {
         void Add(Lesson Lesson);
         List<Lesson> GetAll();
-        Lesson GetById(int id);
+        Lesson? GetById(int id);
         void Update(Lesson Lesson);
-        void Delete(int id);
+     
     }
 }

@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DAL;
-using DTO;
 using Microsoft.EntityFrameworkCore;
 
-namespace BLL.Repositories
+namespace DAL.Repositories
 {
-    public class UsersRepository: IUsersRepository
+    public class LessonsRepository: ILessonsRepository
     {
-        public void Add(Users User)
+        public void Add(Lesson Lesson)
         {
 
         }
-        public List<Users> GetAll()
+        public List<Lesson> GetAll()
         {
 
         }
-        public Users GetById(int id)
+        public Lesson GetById(int id)
         {
 
         }
-        public void Update(Users User)
+        public void Update(Lesson Lesson)
         {
 
         }

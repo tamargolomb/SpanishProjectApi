@@ -76,7 +76,11 @@
               "RelativeDocumentMoniker": "BLL\\Mapper\\MappingProfile.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\BLL\\Mapper\\MappingProfile.cs",
               "RelativeToolTip": "BLL\\Mapper\\MappingProfile.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAACgAAAAAAAAAAAAQwDUAAAA9AAAAAAAAAA==",
+=======
+              "ViewState": "AgIAACIAAAAAAAAAAAAIwCwAAAAiAAAAAAAAAA==",
+>>>>>>> 2c10163946bc67fa64a8436d5a2457b6fa70871a
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-14T22:52:08.158Z",
               "IsPinned": true,
@@ -93,7 +97,12 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-15T00:06:21.825Z",
+<<<<<<< HEAD
               "IsPinned": true
+=======
+              "IsPinned": true,
+              "EditorCaption": ""
+>>>>>>> 2c10163946bc67fa64a8436d5a2457b6fa70871a
             },
             {
               "$type": "Document",
@@ -105,7 +114,12 @@
               "RelativeToolTip": "DTO\\General\\LevelTestResultDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-10-15T00:22:49.522Z"
+=======
+              "WhenOpened": "2026-10-15T00:22:49.522Z",
+              "EditorCaption": ""
+>>>>>>> 2c10163946bc67fa64a8436d5a2457b6fa70871a
             },
             {
               "$type": "Document",
@@ -117,7 +131,12 @@
               "RelativeToolTip": "DTO\\General\\LessonSearchDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-10-15T00:17:33.238Z"
+=======
+              "WhenOpened": "2026-10-15T00:17:33.238Z",
+              "EditorCaption": ""
+>>>>>>> 2c10163946bc67fa64a8436d5a2457b6fa70871a
             },
             {
               "$type": "Document",
@@ -129,7 +148,12 @@
               "RelativeToolTip": "BLL\\Repositories\\LevelsRepository.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAASwA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-10-14T22:39:54.587Z"
+=======
+              "WhenOpened": "2026-10-14T22:39:54.587Z",
+              "EditorCaption": ""
+>>>>>>> 2c10163946bc67fa64a8436d5a2457b6fa70871a
             },
             {
               "$type": "Document",
@@ -165,7 +189,8 @@
               "RelativeToolTip": "projectApi\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T18:38:31.502Z"
+              "WhenOpened": "2026-10-05T18:38:31.502Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -189,7 +214,8 @@
               "RelativeToolTip": "DAL\\Levels.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAmwAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:14:42.306Z"
+              "WhenOpened": "2026-10-05T17:14:42.306Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -213,7 +239,8 @@
               "RelativeToolTip": "DAL\\Categories.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:04:32.112Z"
+              "WhenOpened": "2026-10-05T17:04:32.112Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

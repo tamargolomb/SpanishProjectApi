@@ -25,10 +25,7 @@ namespace DAL.Repositories
         .Include(r => r.LevelDescription)
         .ToList();
         }
-        public Levels GetById(int id)
-        {
-            return _context.Levels.Find(id);
-        }
+      
         public void Update(Levels Level)
         {
             _context.Levels.Update(Level);

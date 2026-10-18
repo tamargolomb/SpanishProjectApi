@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\projectapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\projectapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\reviewandratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\reviewandratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\levelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\levelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\lessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\lessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\ireviewandratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\ireviewandratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\ilevelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\ilevelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\ilessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\ilessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\repositories\\levelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\levelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +54,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Mapper\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "BLL\\Mapper\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Mapper\\MappingProfile.cs",
-              "RelativeToolTip": "BLL\\Mapper\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\IUserService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\IUserService.cs",
+              "RelativeToolTip": "BLL\\Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-17T21:27:01.787Z",
+              "WhenOpened": "2026-10-18T19:27:37.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LessonService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LessonService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\LessonService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LessonService.cs",
+              "RelativeToolTip": "BLL\\Services\\LessonService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:24:41.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LevelService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LevelService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\LevelService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LevelService.cs",
+              "RelativeToolTip": "BLL\\Services\\LevelService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:25:23.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "projectApi.http",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\projectApi.http",
-              "RelativeDocumentMoniker": "projectApi\\projectApi.http",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\projectApi.http",
-              "RelativeToolTip": "projectApi\\projectApi.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-10-17T21:18:01.169Z",
+              "Title": "ReviewAndRatingService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ReviewAndRatingService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ReviewAndRatingService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ReviewAndRatingService.cs",
+              "RelativeToolTip": "BLL\\Services\\ReviewAndRatingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:26:51.866Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\UserService.cs",
+              "RelativeToolTip": "BLL\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:27:18.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IReviewAndRatingService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\IReviewAndRatingService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\IReviewAndRatingService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\IReviewAndRatingService.cs",
+              "RelativeToolTip": "BLL\\Services\\IReviewAndRatingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:26:32.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ILevelService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ILevelService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ILevelService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ILevelService.cs",
+              "RelativeToolTip": "BLL\\Services\\ILevelService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:25:38.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ILessonService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ILessonService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ILessonService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ILessonService.cs",
+              "RelativeToolTip": "BLL\\Services\\ILessonService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:24:06.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ICategoryService.cs",
+              "RelativeToolTip": "BLL\\Services\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:23:06.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\CategoryService.cs",
+              "RelativeToolTip": "BLL\\Services\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:22:27.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LevelsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Repositories\\LevelsRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\LevelsRepository.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Repositories\\LevelsRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\LevelsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T19:24:50.143Z"
             }
           ]
         }

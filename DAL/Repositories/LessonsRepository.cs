@@ -33,7 +33,7 @@ namespace DAL.Repositories
                   .Include(r => r.CreatedAt)
               .ToList();
         }
-        public Lesson GetById(int id)
+        public Lesson? GetById(int id)
         {
             return _context.Lessons
               .Include(r => r.LessonId)

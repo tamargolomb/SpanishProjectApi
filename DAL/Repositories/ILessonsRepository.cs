@@ -11,6 +11,6 @@ namespace DAL.Repositories
         List<Lesson> GetAll();
         Lesson GetById(int id);
         void Update(Lesson Lesson);
-        void Delete(int id);
+     
     }
 }

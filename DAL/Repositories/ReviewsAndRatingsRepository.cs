@@ -7,25 +7,31 @@ namespace DAL.Repositories
 {
     public class ReviewsAndRatingsRepository: IReviewsAndRatingsRepository
     {
+        private readonly SpanishDB _context;
+
+        public ReviewsAndRatingsRepository(SpanishDB context)
+        {
+            _context = context;
+        }
         public void Add(ReviewsAndRatings ReviewAndRating)
         {
-
+            _context.ReviewsAndRatings.Add(ReviewAndRating);
+            _context.SaveChanges();
         }
         public List<ReviewsAndRatings> GetAll()
         {
-
-        }
-        public ReviewsAndRatings GetById(int id)
-        {
-
+            return _context.ReviewsAndRatings
+              .Include(r => r.LessonId)
+              .Include(r => r.UserId)
+              .Include(r => r.Rating)
+              .Include(r => r.ReviewText)
+              .Include(r => r.CreatedAt)
+              .ToList();
         }
         public void Update(ReviewsAndRatings ReviewAndRating)
         {
-
-        }
-        public void Delete(int id)
-        {
-
+            _context.ReviewsAndRatings.Update(ReviewAndRating);
+            _context.SaveChanges();
         }
     }
 }

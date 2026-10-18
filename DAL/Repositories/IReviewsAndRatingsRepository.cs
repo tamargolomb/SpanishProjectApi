@@ -9,8 +9,7 @@ namespace DAL.Repositories
     {
         void Add(ReviewsAndRatings ReviewAndRating);
         List<ReviewsAndRatings> GetAll();
-        ReviewsAndRatings GetById(int id);
         void Update(ReviewsAndRatings ReviewAndRating);
-        void Delete(int id);
+     
     }
 }

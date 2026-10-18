@@ -10,8 +10,6 @@ namespace DAL.Repositories
     {
         void Add(Categories category);            
         List<Categories> GetAll();               
-        Categories GetById(int id);                
-        void Update(Categories category);         
-        void Delete(int id);
+
     }
 }

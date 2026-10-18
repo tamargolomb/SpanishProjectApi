@@ -11,6 +11,6 @@ namespace DAL.Repositories
         List<Levels> GetAll();
         Levels GetById(int id);
         void Update(Levels Level);
-        void Delete(int id);
+     
     }
 }

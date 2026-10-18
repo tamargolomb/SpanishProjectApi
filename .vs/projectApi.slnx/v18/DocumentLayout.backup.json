@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\bll\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dto\\general\\leveltestresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\general\\leveltestresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dto\\general\\lessonsearchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\general\\lessonsearchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\levels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\levels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dto\\reviewsandratings\\showreviewsandratingsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\reviewsandratings\\showreviewsandratingsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\reviewsandratings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\reviewsandratings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\bll\\repositories\\levelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\levelsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\spanishdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\spanishdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,36 +51,12 @@
       "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\migrations\\20261011160057_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\reviewsandratings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\reviewsandratings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\lessons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\lessons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dto\\categories\\addcategoriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\categories\\addcategoriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\projectapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\user\\desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\spanishprojectapi\\dal\\levels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\levels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +66,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\BLL\\Mapper\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "BLL\\Mapper\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\BLL\\Mapper\\MappingProfile.cs",
+              "RelativeToolTip": "BLL\\Mapper\\MappingProfile.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-14T22:52:08.158Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ShowReviewsAndRatingsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DTO\\ReviewsAndRatings\\ShowReviewsAndRatingsDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ReviewsAndRatings\\ShowReviewsAndRatingsDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DTO\\ReviewsAndRatings\\ShowReviewsAndRatingsDTO.cs",
+              "RelativeToolTip": "DTO\\ReviewsAndRatings\\ShowReviewsAndRatingsDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T00:06:21.825Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LevelTestResultDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DTO\\General\\LevelTestResultDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\General\\LevelTestResultDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DTO\\General\\LevelTestResultDTO.cs",
+              "RelativeToolTip": "DTO\\General\\LevelTestResultDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T00:22:49.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LessonSearchDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DTO\\General\\LessonSearchDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\General\\LessonSearchDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DTO\\General\\LessonSearchDTO.cs",
+              "RelativeToolTip": "DTO\\General\\LessonSearchDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T00:17:33.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LevelsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\BLL\\Repositories\\LevelsRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\LevelsRepository.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\BLL\\Repositories\\LevelsRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\LevelsRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAASwA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-14T22:39:54.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "AddCategoriesDTO.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DTO\\Categories\\AddCategoriesDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Categories\\AddCategoriesDTO.cs",
@@ -62,12 +141,11 @@
               "RelativeToolTip": "DTO\\Categories\\AddCategoriesDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-14T21:48:36.191Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-14T21:48:36.191Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "20261011160057_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Migrations\\20261011160057_InitialCreate.cs",
               "RelativeDocumentMoniker": "DAL\\Migrations\\20261011160057_InitialCreate.cs",
@@ -75,8 +153,7 @@
               "RelativeToolTip": "DAL\\Migrations\\20261011160057_InitialCreate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T16:00:57.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-11T16:00:57.758Z"
             },
             {
               "$type": "Document",
@@ -86,13 +163,13 @@
               "RelativeDocumentMoniker": "projectApi\\Program.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\projectApi\\Program.cs",
               "RelativeToolTip": "projectApi\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAIAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-05T18:38:31.502Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\projectApi\\appsettings.json",
               "RelativeDocumentMoniker": "projectApi\\appsettings.json",
@@ -105,65 +182,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Lessons.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Lessons.cs",
-              "RelativeDocumentMoniker": "DAL\\Lessons.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Lessons.cs",
-              "RelativeToolTip": "DAL\\Lessons.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAIwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:13:34.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Levels.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Levels.cs",
               "RelativeDocumentMoniker": "DAL\\Levels.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Levels.cs",
               "RelativeToolTip": "DAL\\Levels.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAmwAkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-05T17:14:42.306Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "SpanishDB.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\SpanishDB.cs",
               "RelativeDocumentMoniker": "DAL\\SpanishDB.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\SpanishDB.cs",
               "RelativeToolTip": "DAL\\SpanishDB.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwCoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAiwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T18:35:17.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-05T18:35:17.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Categories.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Categories.cs",
               "RelativeDocumentMoniker": "DAL\\Categories.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Categories.cs",
               "RelativeToolTip": "DAL\\Categories.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-05T17:04:32.112Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ReviewsAndRatings.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\ReviewsAndRatings.cs",
               "RelativeDocumentMoniker": "DAL\\ReviewsAndRatings.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\ReviewsAndRatings.cs",
               "RelativeToolTip": "DAL\\ReviewsAndRatings.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAgwBAAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAgwBAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:15:45.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-05T17:15:45.168Z"
             },
             {
               "$type": "Document",
@@ -173,10 +235,9 @@
               "RelativeDocumentMoniker": "DAL\\Users.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\SpanishProjectApi\\DAL\\Users.cs",
               "RelativeToolTip": "DAL\\Users.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAYwBEAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwBIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T17:17:14.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-05T17:17:14.833Z"
             }
           ]
         }

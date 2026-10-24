@@ -21,23 +21,13 @@ namespace DAL.Repositories
         public List<Users> GetAll()
         {
             return _context.Users
-              .Include(r => r.UserId)
-              .Include(r => r.UserName)
-              .Include(r => r.UserEmail)
               .Include(r => r.LevelId)
-              .Include(r => r.JoinDate)
-              .Include(r => r.Score)
               .ToList();
         }
         public Users? GetById(int id)
         {
             return _context.Users
-                .Include(r => r.UserId)
-                .Include(r => r.UserName)
-                .Include(r => r.UserEmail)
                 .Include(r => r.LevelId)
-                .Include(r => r.JoinDate)
-                .Include(r => r.Score)
            .FirstOrDefault(r => r.UserId == id);
         }
         public void Update(Users User)

@@ -23,9 +23,6 @@ namespace DAL.Repositories
             return _context.ReviewsAndRatings
               .Include(r => r.LessonId)
               .Include(r => r.UserId)
-              .Include(r => r.Rating)
-              .Include(r => r.ReviewText)
-              .Include(r => r.CreatedAt)
               .ToList();
         }
         public void Update(ReviewsAndRatings ReviewAndRating)

@@ -23,8 +23,6 @@ namespace DAL.Repositories
         public List<Categories> GetAll()
         {
             return _context.Categories
-             .Include(r => r.CategoryName)
-             .Include(r => r.CategoryDescription)
              .ToList();
         }
       

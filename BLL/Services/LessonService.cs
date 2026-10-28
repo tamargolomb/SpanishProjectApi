@@ -14,14 +14,23 @@ namespace BLL.Services
     {
         private readonly ILessonsRepository _LessonsRepository;
         private readonly IMapper _mapper;
-        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper)
+        private readonly IImageService _imageService;
+        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService)
         {
             _LessonsRepository = lessonsRepository;
             _mapper = mapper;
+            _imageService = imageService;
         }
-        public void Add(Lesson lesson)
+        public ShowLessonDTO Add(AddLessonDTO lessonDTO)
         {
+            var lesson = _mapper.Map<Lesson>(lessonDTO);
+            if (lessonDTO.FileUrl != null)
+                lesson.FileUrl = _imageService.Save(lessonDTO.FileUrl);
             _LessonsRepository.Add(lesson);
+            return _mapper.Map<ShowLessonDTO>(lesson);
+
+          
+           
         }
         public Lesson GetById(int id)
         {

@@ -22,9 +22,11 @@ namespace BLL.Mapper
             CreateMap<Categories,ShowCategoriesDTO>().ReverseMap();
 
             //Lesson
-            CreateMap<Lesson,AddViewsDTO>().ReverseMap();
-            CreateMap<Lesson,AddLessonDTO>().ReverseMap();
+            CreateMap<Lesson, AddViewsDTO>().ReverseMap();
+            CreateMap<Lesson,AddLessonDTO>().ReverseMap()
+                .ForMember(dest => dest.FileUrl, opt => opt.Ignore()); ;
             CreateMap<Lesson,ShowLessonDTO>()
+                .ForMember(dest => dest.FileUrl, opt => opt.Ignore())
             .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
             .ForMember(dest => dest.LevelName, opt => opt.MapFrom(src => src.Level.LevelName))
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.user.UserName))
@@ -52,7 +54,6 @@ namespace BLL.Mapper
 
             //General
             CreateMap<LessonSearchDTO, Lesson>().ReverseMap();
-
         }
     }
 }

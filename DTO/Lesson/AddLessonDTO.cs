@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace DTO.Lesson
 {
@@ -15,7 +16,7 @@ namespace DTO.Lesson
 
         public string ContentType { get; set; } = string.Empty;
 
-        public string? FileUrl { get; set; }
+        public IFormFile FileUrl { get; set; }
 
         public int CategoryId { get; set; }
 

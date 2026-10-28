@@ -72,8 +72,8 @@ namespace projectApi.Controllers
 
         // POST: api/Lesson
         [HttpPost]
-        public async Task<ActionResult<ShowLessonDTO>> AddLesson(
-            [FromBody] AddLessonDTO dto)
+        public async Task<ActionResult<ShowLessonDTO>> AddLesson([FromBody] AddLessonDTO dto)
+
         {
             // בדיקה שהקטגוריה קיימת
             var categoryExists = await _context.Categories

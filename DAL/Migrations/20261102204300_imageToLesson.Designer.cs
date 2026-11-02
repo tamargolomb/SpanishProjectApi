@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(SpanishDB))]
-    [Migration("20261102074041_AddImageToModel")]
-    partial class AddImageToModel
+    [Migration("20261102204300_imageToLesson")]
+    partial class imageToLesson
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -242,9 +242,9 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Users", b =>
                 {
                     b.HasOne("DAL.Levels", "Level")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("LevelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Level");
@@ -263,6 +263,8 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Levels", b =>
                 {
                     b.Navigation("Lessons");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("DAL.Users", b =>

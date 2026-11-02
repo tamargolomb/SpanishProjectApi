@@ -16,13 +16,14 @@ namespace DTO.Lesson
 
         public string ContentType { get; set; } = string.Empty;
 
-        public IFormFile FileUrl { get; set; }
+        public string? FileUrl { get; set; }
 
         public int CategoryId { get; set; }
 
         public int LevelId { get; set; }
 
         public int UserId {  get; set; }
+        public IFormFile? image { get; set; }
     }
 
 }

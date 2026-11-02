@@ -5,7 +5,7 @@
 namespace DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class AddImageToModel : Migration
+    public partial class imageToLesson : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -39,8 +39,7 @@ namespace DAL.Migrations
                 table: "Users",
                 column: "LevelId",
                 principalTable: "Levels",
-                principalColumn: "LevelId",
-                onDelete: ReferentialAction.NoAction);
+                principalColumn: "LevelId");
         }
 
         /// <inheritdoc />

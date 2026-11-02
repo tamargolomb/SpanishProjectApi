@@ -239,9 +239,9 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Users", b =>
                 {
                     b.HasOne("DAL.Levels", "Level")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("LevelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Level");
@@ -260,6 +260,8 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Levels", b =>
                 {
                     b.Navigation("Lessons");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("DAL.Users", b =>

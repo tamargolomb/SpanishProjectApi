@@ -36,6 +36,7 @@ namespace DTO.Lesson
         public double Rating { get; set; }
 
         public DateTime CreatedAt { get; set; }
+        public string? image { get; set; }
     }
 
 }

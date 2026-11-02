@@ -10,7 +10,7 @@ namespace BLL.Services
     public interface ILessonService
     {
         ShowLessonDTO Add(AddLessonDTO lessonDTO);
-        Lesson GetById(int id);
+        ShowLessonDTO GetById(int id);
         void Update(Lesson lesson);
         List<ShowLessonDTO> GetAllLessons();
     }

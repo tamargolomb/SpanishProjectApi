@@ -39,6 +39,12 @@ namespace DAL
                 .WithMany(u => u.ReviewsAndRatings)
                 .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Users>()
+                  .HasOne(u => u.Level)
+                  .WithMany((l => l.Users))
+                  .HasForeignKey(u => u.LevelId)
+                  .OnDelete(DeleteBehavior.NoAction);
         }
 
     }

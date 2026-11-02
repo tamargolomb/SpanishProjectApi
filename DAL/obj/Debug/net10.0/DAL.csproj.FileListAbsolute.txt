@@ -13,21 +13,6 @@ F:\פרויקט תמריות\projectApi\DAL\obj\Debug\net10.0\DAL.pdb
 F:\פרויקט תמריות\projectApi\DAL\obj\Debug\net10.0\DAL.genruntimeconfig.cache
 F:\פרויקט תמריות\projectApi\DAL\obj\Debug\net10.0\ref\DAL.dll
 F:\פרויקט תמריות\projectApi\DAL\obj\Debug\net10.0\DAL.csproj.Up2Date
-C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.deps.json
-C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.runtimeconfig.json
-C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.dll
-C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.pdb
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.csproj.AssemblyReference.cache
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.AssemblyInfoInputs.cache
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.AssemblyInfo.cs
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.csproj.CoreCompileInputs.cache
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.dll
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\refint\DAL.dll
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.pdb
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.genruntimeconfig.cache
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\ref\DAL.dll
-C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.csproj.Up2Date
 C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\DAL\bin\Debug\net10.0\DAL.deps.json
 C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\DAL\bin\Debug\net10.0\DAL.runtimeconfig.json
 C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\DAL\bin\Debug\net10.0\DAL.dll
@@ -44,3 +29,19 @@ C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\DAL\
 C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\DAL\obj\Debug\net10.0\DAL.genruntimeconfig.cache
 C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\DAL\obj\Debug\net10.0\ref\DAL.dll
 C:\Users\User\Desktop\שנה ב\פרויקט\פרויקט\SpanishProjectApi\DAL\obj\Debug\net10.0\DAL.csproj.Up2Date
+C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.deps.json
+C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.runtimeconfig.json
+C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.dll
+C:\Users\גולומב\Desktop\projectApi\DAL\bin\Debug\net10.0\DAL.pdb
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.csproj.AssemblyReference.cache
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.AssemblyInfoInputs.cache
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.AssemblyInfo.cs
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.sourcelink.json
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.dll
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\refint\DAL.dll
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.pdb
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.genruntimeconfig.cache
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\ref\DAL.dll
+C:\Users\גולומב\Desktop\projectApi\DAL\obj\Debug\net10.0\DAL.csproj.Up2Date

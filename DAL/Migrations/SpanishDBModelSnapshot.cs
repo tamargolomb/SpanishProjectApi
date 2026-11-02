@@ -17,7 +17,7 @@ namespace DAL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.12")
+                .HasAnnotation("ProductVersion", "10.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -85,6 +85,10 @@ namespace DAL.Migrations
                     b.Property<int>("ViewCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("LessonId");
 
                     b.HasIndex("CategoryId");
@@ -141,16 +145,11 @@ namespace DAL.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsersUserId")
-                        .HasColumnType("int");
-
                     b.HasKey("ReviewId");
 
                     b.HasIndex("LessonId");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("UsersUserId");
 
                     b.ToTable("ReviewsAndRatings");
                 });
@@ -185,6 +184,8 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("LevelId");
 
                     b.ToTable("Users");
                 });
@@ -225,18 +226,25 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("DAL.Users", "User")
-                        .WithMany()
+                        .WithMany("ReviewsAndRatings")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("DAL.Users", null)
-                        .WithMany("ReviewsAndRatings")
-                        .HasForeignKey("UsersUserId");
-
                     b.Navigation("Lesson");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DAL.Users", b =>
+                {
+                    b.HasOne("DAL.Levels", "Level")
+                        .WithMany()
+                        .HasForeignKey("LevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Level");
                 });
 
             modelBuilder.Entity("DAL.Categories", b =>

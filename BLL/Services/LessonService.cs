@@ -32,9 +32,14 @@ namespace BLL.Services
           
            
         }
-        public Lesson GetById(int id)
+        public ShowLessonDTO GetById(int id)
         {
-            _LessonsRepository.GetById(id);
+            var lesson = _LessonsRepository.GetById(id);
+
+            if (lesson == null)
+                throw new Exception($"Lesson with id {id} was not found");
+
+            return _mapper.Map<ShowLessonDTO>(lesson);
         }
         public void Update(Lesson lesson)
         {

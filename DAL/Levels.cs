@@ -12,5 +12,6 @@ namespace DAL
         public string LevelName { get; set; }
         public string LevelDescription { get; set; }
         public  List<Lesson> Lessons { get; set; }
+        public List<Users> Users { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace DAL
         public string LessonDescription { get; set; }
         public string ContentType { get; set; }
         public string FileUrl { get; set; }
+        public string image { get; set; }
         public int CategoryId { get; set; }
         public int UserId { get; set; }
         public int LevelId { get; set; }

@@ -25,7 +25,7 @@ namespace BLL.Services
         {
             var lesson = _mapper.Map<Lesson>(lessonDTO);
             if (lessonDTO.FileUrl != null)
-                lesson.FileUrl = _imageService.Save(lessonDTO.FileUrl);
+                lesson.FileUrl = _imageService.Save(lessonDTO.image);
             _LessonsRepository.Add(lesson);
             return _mapper.Map<ShowLessonDTO>(lesson);
 

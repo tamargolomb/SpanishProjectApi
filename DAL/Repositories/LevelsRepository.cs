@@ -21,8 +21,6 @@ namespace DAL.Repositories
         public List<Levels> GetAll()
         {
             return _context.Levels
-        .Include(r => r.LevelName)
-        .Include(r => r.LevelDescription)
         .ToList();
         }
       

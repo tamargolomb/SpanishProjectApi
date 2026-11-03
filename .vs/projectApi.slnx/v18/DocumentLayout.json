@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\ilessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\ilessonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "ILessonService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ILessonService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ILessonService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ILessonService.cs",
+              "RelativeToolTip": "BLL\\Services\\ILessonService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T23:35:46.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LessonController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\LessonController.cs",
+              "RelativeDocumentMoniker": "projectApi\\Controllers\\LessonController.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\LessonController.cs",
+              "RelativeToolTip": "projectApi\\Controllers\\LessonController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T23:32:43.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\TokenService.cs",
@@ -39,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Program.cs",
               "RelativeDocumentMoniker": "projectApi\\Program.cs",
@@ -52,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "projectApi\\Controllers\\UserController.cs",

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using BLL.Services;
 using DAL;
 using DTO;
 using DTO.General;
 using DTO.Lesson;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,15 +12,18 @@ namespace projectApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class LessonController : ControllerBase
     {
         private readonly SpanishDB _context;
         private readonly IMapper _mapper;
+        private readonly ILessonService _ilessonservice;
 
-        public LessonController(SpanishDB context, IMapper mapper)
+        public LessonController(SpanishDB context, IMapper mapper, ILessonService ilessonservice)
         {
             _context = context;
             _mapper = mapper;
+            _ilessonservice = ilessonservice;
         }
 
         // טעינת שיעור עם הקטגוריה, הרמה והמשתמש שהעלה אותו

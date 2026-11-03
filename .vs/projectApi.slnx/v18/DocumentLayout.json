@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\bll\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809F467-C79A-42D1-85F4-40F0DE09D323}|BLL\\BLL.csproj|solutionrelative:bll\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\IUserService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\IUserService.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\IUserService.cs",
-              "RelativeToolTip": "BLL\\Services\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\TokenService.cs",
+              "RelativeToolTip": "BLL\\Services\\TokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T22:33:22.871Z",
+              "WhenOpened": "2026-11-03T23:00:43.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Program.cs",
+              "RelativeDocumentMoniker": "projectApi\\Program.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Program.cs",
+              "RelativeToolTip": "projectApi\\Program.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T22:56:23.75Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\UserService.cs",
-              "RelativeToolTip": "BLL\\Services\\UserService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAABfAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "projectApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "projectApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAAFEAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T22:33:20.474Z",
+              "WhenOpened": "2026-11-03T22:47:48.231Z",
               "EditorCaption": ""
             }
           ]

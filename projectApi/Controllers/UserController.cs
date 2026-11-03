@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BLL.Services;
 using DAL;
 using DTO;
 using DTO.User;
@@ -13,11 +14,13 @@ namespace projectApi.Controllers
     {
         private readonly SpanishDB _context;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public UserController(SpanishDB context, IMapper mapper)
+        public UserController(SpanishDB context, IMapper mapper, IUserService userService)
         {
             _context = context;
             _mapper = mapper;
+            _userService = userService;
         }
 
         // GET: api/User
@@ -53,8 +56,9 @@ namespace projectApi.Controllers
             var emailExists = await _context.Users
                 .AnyAsync(u => u.UserEmail == dto.UserEmail);
 
-            if (emailExists)
-                return BadRequest("כתובת האימייל כבר קיימת במערכת");
+            if (!_userService.Register(dto))
+                return Conflict("Email is already registered.");
+
 
             var user = _mapper.Map<Users>(dto);
 
@@ -70,11 +74,12 @@ namespace projectApi.Controllers
                 nameof(GetUser),
                 new { id = user.UserId },
                 result);
+
         }
 
         // POST: api/User/login
         [HttpPost("login")]
-        public async Task<ActionResult<ShowUserDTO>> Login(
+        public async Task<ActionResult<AuthResponseDto>> Login(
             [FromBody] LoginUserDTO dto)
         {
             var user = await _context.Users

@@ -9,7 +9,9 @@ namespace DAL.Repositories
     {
         void Add(Users User);
         List<Users> GetAll();
+        Users? GetByEmail(string email);
         Users? GetById(int id);
+        bool EmailExists(string email);
         void Update(Users User);
      
     }

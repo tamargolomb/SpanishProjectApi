@@ -24,11 +24,20 @@ namespace DAL.Repositories
               .Include(r => r.LevelId)
               .ToList();
         }
+
+        public Users? GetByEmail(string email)
+        {
+            return _context.Users.FirstOrDefault(u => u.UserEmail == email);
+        }
+
         public Users? GetById(int id)
         {
-            return _context.Users
-                .Include(r => r.LevelId)           
-           .FirstOrDefault(r => r.UserId == id);
+            return _context.Users.Find(id);
+        }
+
+        public bool EmailExists(string email)
+        {
+            return _context.Users.Any(u => u.UserEmail == email);
         }
         public void Update(Users User)
         {

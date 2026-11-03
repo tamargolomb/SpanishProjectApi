@@ -173,7 +173,7 @@ namespace DAL.Migrations
 
                     b.Property<string>("UserEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -186,6 +186,9 @@ namespace DAL.Migrations
                     b.HasKey("UserId");
 
                     b.HasIndex("LevelId");
+
+                    b.HasIndex("UserEmail")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });

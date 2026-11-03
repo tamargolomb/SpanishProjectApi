@@ -45,6 +45,10 @@ namespace DAL
                   .WithMany((l => l.Users))
                   .HasForeignKey(u => u.LevelId)
                   .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Users>()
+                 .HasIndex(u => u.UserEmail)
+                 .IsUnique();
         }
 
     }

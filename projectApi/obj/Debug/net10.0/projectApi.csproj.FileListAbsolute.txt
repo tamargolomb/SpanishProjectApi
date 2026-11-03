@@ -351,3 +351,5 @@ C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\refint\pro
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\projectApi.pdb
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\projectApi.genruntimeconfig.cache
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\ref\projectApi.dll
+C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll

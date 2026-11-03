@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261103211347_AddUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DAL\\Migrations\\20261103211347_AddUsers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\spanishdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\spanishdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC7AC314-8E72-3A4C-FEDD-79EDEA932D87}|projectApi\\projectApi.csproj|solutionrelative:projectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dto\\lesson\\addviewsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\lesson\\addviewsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\desktop\\projectapi\\dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,45 +55,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20261103211347_AddUsers.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261103211347_AddUsers.cs",
+              "RelativeDocumentMoniker": "DAL\\Migrations\\20261103211347_AddUsers.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Migrations\\20261103211347_AddUsers.cs",
+              "RelativeToolTip": "DAL\\Migrations\\20261103211347_AddUsers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T21:13:48.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Users.cs",
+              "RelativeDocumentMoniker": "DAL\\Users.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Users.cs",
+              "RelativeToolTip": "DAL\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T21:09:28.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SpanishDB.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\SpanishDB.cs",
+              "RelativeDocumentMoniker": "DAL\\SpanishDB.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\SpanishDB.cs",
+              "RelativeToolTip": "DAL\\SpanishDB.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T20:41:13.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Program.cs",
               "RelativeDocumentMoniker": "projectApi\\Program.cs",
               "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Program.cs",
               "RelativeToolTip": "projectApi\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-02T21:32:47.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LessonController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\LessonController.cs",
-              "RelativeDocumentMoniker": "projectApi\\Controllers\\LessonController.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\LessonController.cs",
-              "RelativeToolTip": "projectApi\\Controllers\\LessonController.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T21:32:10.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LessonService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LessonService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\LessonService.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LessonService.cs",
-              "RelativeToolTip": "BLL\\Services\\LessonService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB0AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T21:31:19.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ImageService.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\ImageService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\ImageService.cs",
@@ -93,12 +114,11 @@
               "RelativeToolTip": "BLL\\Services\\ImageService.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T21:30:37.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T21:30:37.949Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "IImageService.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\IImageService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\IImageService.cs",
@@ -106,12 +126,11 @@
               "RelativeToolTip": "BLL\\Services\\IImageService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T21:30:17.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T21:30:17.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\CategoryService.cs",
@@ -119,12 +138,35 @@
               "RelativeToolTip": "BLL\\Services\\CategoryService.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T21:30:02.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T21:30:02.02Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "LessonService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LessonService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\LessonService.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\BLL\\Services\\LessonService.cs",
+              "RelativeToolTip": "BLL\\Services\\LessonService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T21:31:19.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LessonController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\LessonController.cs",
+              "RelativeDocumentMoniker": "projectApi\\Controllers\\LessonController.cs",
+              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\projectApi\\Controllers\\LessonController.cs",
+              "RelativeToolTip": "projectApi\\Controllers\\LessonController.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T21:32:10.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "AddViewsDTO.cs",
               "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DTO\\Lesson\\AddViewsDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Lesson\\AddViewsDTO.cs",
@@ -132,21 +174,7 @@
               "RelativeToolTip": "DTO\\Lesson\\AddViewsDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T21:11:24.279Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Users.cs",
-              "RelativeDocumentMoniker": "DAL\\Users.cs",
-              "ToolTip": "C:\\Users\\\u05D2\u05D5\u05DC\u05D5\u05DE\u05D1\\Desktop\\projectApi\\DAL\\Users.cs",
-              "RelativeToolTip": "DAL\\Users.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T21:06:35.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T21:11:24.279Z"
             }
           ]
         }

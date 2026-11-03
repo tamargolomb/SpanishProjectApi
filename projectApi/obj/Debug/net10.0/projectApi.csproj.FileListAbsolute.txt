@@ -189,8 +189,10 @@ C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\AutoMapper
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Azure.Core.dll
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Humanizer.dll
+C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.Build.Framework.dll
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
 C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -351,5 +353,3 @@ C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\refint\pro
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\projectApi.pdb
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\projectApi.genruntimeconfig.cache
 C:\Users\גולומב\Desktop\projectApi\projectApi\obj\Debug\net10.0\ref\projectApi.dll
-C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\גולומב\Desktop\projectApi\projectApi\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll

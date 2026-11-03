@@ -168,6 +168,10 @@ namespace DAL.Migrations
                     b.Property<int>("LevelId")
                         .HasColumnType("int");
 
+                    //b.Property<string>("Role")
+                    //    .IsRequired()
+                    //    .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Score")
                         .HasColumnType("int");
 

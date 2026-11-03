@@ -21,7 +21,7 @@ namespace DAL
         public DateTime CreatedAt { get; set; }
         public  Categories Category { get; set; }
         public  Levels Level { get; set; }
-        public  Users user { get; set; }
+        public  Users user { get; set; } = null!;
         public  List<ReviewsAndRatings> ReviewsAndRatings { get; set; }
     }
 }

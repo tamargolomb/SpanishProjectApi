@@ -11,6 +11,7 @@ namespace BLL.Services
     {
         Users? GetById(int id);
         bool Register(AddUserDTO dto);
+        AuthResponseDto? Login(LoginUserDTO dto);
         List<ShowUserDTO> GetAllUsers();
         void Update(Users user);
     }

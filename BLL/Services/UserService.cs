@@ -39,6 +39,19 @@ namespace BLL.Services
             _UsersRepository.Add(user);
             return true;
         }
+        public AuthResponseDto? Login(LoginUserDTO dto)
+        {
+            var email = dto.UserEmail.Trim().ToLowerInvariant();
+            var user = _UsersRepository.GetByEmail(email);
+            if (user is null)
+                return null;
+
+            var result = _hasher.VerifyHashedPassword(user, user.UserPassword, dto.UserPassword);
+            if (result == PasswordVerificationResult.Failed)
+                return null;
+
+            return _tokens.CreateToken(user);
+        }
         public List<ShowUserDTO> GetAllUsers()
         {
             var users = _UsersRepository.GetAll();

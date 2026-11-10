@@ -11,7 +11,6 @@ namespace DAL.Repositories
         List<Lesson> GetAll();
         Lesson? GetById(int id);
         void Update(Lesson Lesson);
-        //לכתוב במחלקות מכאן..
         bool Delete(int id);
         Lesson? GetOwned(int id, int userId);
         List<Lesson> GetByUser(int userId);

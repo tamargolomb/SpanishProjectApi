@@ -35,6 +35,7 @@ namespace projectApi.Controllers
         {
             return Ok(_ilessonservice.GetLessonById(id));
         }
+
         [HttpPost]
         public IActionResult Add([FromForm] AddLessonDTO dto)
         {

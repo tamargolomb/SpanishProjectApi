@@ -11,5 +11,7 @@ namespace DAL.Repositories
         void Add(Categories category);            
         List<Categories> GetAll();
         bool Exists(int id);
+        bool Delete(int id);
+        Categories? GetOwned(int id);
     }
 }

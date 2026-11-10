@@ -3,96 +3,116 @@ using BLL.Services;
 using DAL;
 using DTO;
 using DTO.Categories;
+using DTO.Lesson;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RecipeWeb;
 
 namespace projectApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CategoriesController : ControllerBase
     {
-        private readonly SpanishDB _context;
-        private readonly IMapper _mapper;
         private readonly ICategoryService _icategoryservice;
 
-        public CategoriesController(SpanishDB context, IMapper mapper, ICategoryService icategoryservice)
+        public CategoriesController(ICategoryService icategoryservice)
         {
-            _context = context;
-            _mapper = mapper;
             _icategoryservice = icategoryservice;
         }
 
-        // GET: api/Categories
         [HttpGet]
-        public async Task<ActionResult<List<ShowCategoriesDTO>>> GetCategories()
+        public ActionResult<List<ShowCategoriesDTO>> GetAll()
         {
-            var categories = await _context.Categories.ToListAsync();
-
-            return Ok(_mapper.Map<List<ShowCategoriesDTO>>(categories));
+            return _icategoryservice.GetAllCategories();
         }
+
+        [HttpPost]
+        public IActionResult Add([FromForm] AddCategoriesDTO dto)
+        {
+            return Ok(_icategoryservice.AddCategory(dto));
+        }
+
+        [HttpDelete("{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            if (!_icategoryservice.DeleteCategory(id))
+                return NotFound();
+
+            return NoContent();
+        }
+        // GET: api/Categories
+        //[HttpGet]
+        //public async Task<ActionResult<List<ShowCategoriesDTO>>> GetCategories()
+        //{
+        //    var categories = await _context.Categories.ToListAsync();
+
+        //    return Ok(_mapper.Map<List<ShowCategoriesDTO>>(categories));
+        //}
 
         // GET: api/Categories/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ShowCategoriesDTO>> GetCategory(int id)
-        {
-            var category = await _context.Categories.FindAsync(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<ShowCategoriesDTO>> GetCategory(int id)
+        //{
+        //    var category = await _context.Categories.FindAsync(id);
 
-            if (category == null)
-                return NotFound("הקטגוריה לא נמצאה");
+        //    if (category == null)
+        //        return NotFound("הקטגוריה לא נמצאה");
 
-            return Ok(_mapper.Map<ShowCategoriesDTO>(category));
-        }
+        //    return Ok(_mapper.Map<ShowCategoriesDTO>(category));
+        //}
 
-        // POST: api/Categories
-        [HttpPost]
-        public async Task<ActionResult<ShowCategoriesDTO>> AddCategory(
-            [FromBody] AddCategoriesDTO dto)
-        {
-            var category = _mapper.Map<Categories>(dto);
+        //// POST: api/Categories
+        //[HttpPost]
+        //public async Task<ActionResult<ShowCategoriesDTO>> AddCategory(
+        //    [FromBody] AddCategoriesDTO dto)
+        //{
+        //    var category = _mapper.Map<Categories>(dto);
 
-            _context.Categories.Add(category);
-            await _context.SaveChangesAsync();
+        //    _context.Categories.Add(category);
+        //    await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<ShowCategoriesDTO>(category);
+        //    var result = _mapper.Map<ShowCategoriesDTO>(category);
 
-            return CreatedAtAction(
-                nameof(GetCategory),
-                new { id = category.CategoryId },
-                result);
-        }
+        //    return CreatedAtAction(
+        //        nameof(GetCategory),
+        //        new { id = category.CategoryId },
+        //        result);
+        //}
 
-        // PUT: api/Categories/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory(
-            int id,
-            [FromBody] AddCategoriesDTO dto)
-        {
-            var category = await _context.Categories.FindAsync(id);
+        //// PUT: api/Categories/5
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> UpdateCategory(
+        //    int id,
+        //    [FromBody] AddCategoriesDTO dto)
+        //{
+        //    var category = await _context.Categories.FindAsync(id);
 
-            if (category == null)
-                return NotFound("הקטגוריה לא נמצאה");
+        //    if (category == null)
+        //        return NotFound("הקטגוריה לא נמצאה");
 
-            _mapper.Map(dto, category);
+        //    _mapper.Map(dto, category);
 
-            await _context.SaveChangesAsync();
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         // DELETE: api/Categories/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCategory(int id)
-        {
-            var category = await _context.Categories.FindAsync(id);
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteCategory(int id)
+        //{
+        //    var category = await _context.Categories.FindAsync(id);
 
-            if (category == null)
-                return NotFound("הקטגוריה לא נמצאה");
+        //    if (category == null)
+        //        return NotFound("הקטגוריה לא נמצאה");
 
-            _context.Categories.Remove(category);
-            await _context.SaveChangesAsync();
+        //    _context.Categories.Remove(category);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
     }
 }

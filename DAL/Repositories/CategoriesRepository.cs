@@ -29,7 +29,18 @@ namespace DAL.Repositories
             return _context.Categories
              .ToList();
         }
-      
-  
+      public bool Delete(int id)
+        {
+            var category = _context.Categories.Find(id);
+            if (category == null)
+                return false;
+
+            _context.Categories.Remove(category);
+            _context.SaveChanges();
+            return true;
+        }
+        public Categories? GetOwned(int id)=>
+           _context.Categories.FirstOrDefault(r => r.CategoryId == id);
+
     }
 }

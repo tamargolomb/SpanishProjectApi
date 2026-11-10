@@ -15,13 +15,14 @@ namespace BLL.Services
         private readonly ILessonsRepository _LessonsRepository;
         private readonly IMapper _mapper;
         private readonly IImageService _imageService;
+
         public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService)
         {
             _LessonsRepository = lessonsRepository;
             _mapper = mapper;
             _imageService = imageService;
         }
-        public ShowLessonDTO Add(AddLessonDTO lessonDTO)
+        public ShowLessonDTO AddLesson(AddLessonDTO lessonDTO)
         {
             var lesson = _mapper.Map<Lesson>(lessonDTO);
             if (lessonDTO.FileUrl != null)
@@ -32,7 +33,7 @@ namespace BLL.Services
           
            
         }
-        public ShowLessonDTO GetById(int id)
+        public ShowLessonDTO GetLessonById(int id)
         {
             var lesson = _LessonsRepository.GetById(id);
 
@@ -50,6 +51,15 @@ namespace BLL.Services
             var lessons = _LessonsRepository.GetAll();
             return _mapper.Map<List<ShowLessonDTO>>(lessons);
         }
-        
+        public bool DeleteLesson(int id, int userId)
+        {
+            var lesson = _LessonsRepository.GetOwned(id, userId);
+            if (lesson is null)
+                return false;
+
+            _LessonsRepository.Delete(id);
+            return true;
+        }
+
     }
 }

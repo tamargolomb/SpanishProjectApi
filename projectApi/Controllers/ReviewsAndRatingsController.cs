@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BLL.Services;
 using DAL;
 using DTO;
 using DTO.ReviewsAndRatings;
@@ -13,13 +14,13 @@ namespace projectApi.Controllers
     {
         private readonly SpanishDB _context;
         private readonly IMapper _mapper;
+        private readonly IReviewAndRatingService _ireviewandratingservice;
 
-        public ReviewsAndRatingsController(
-            SpanishDB context,
-            IMapper mapper)
+        public ReviewsAndRatingsController(SpanishDB context, IMapper mapper, IReviewAndRatingService ireviewandratingservice)
         {
             _context = context;
             _mapper = mapper;
+            ireviewandratingservice = _ireviewandratingservice;
         }
 
         // GET: api/ReviewsAndRatings

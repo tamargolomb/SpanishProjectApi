@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BLL.Services;
 using DAL;
 using DTO;
 using DTO.Categories;
@@ -13,11 +14,13 @@ namespace projectApi.Controllers
     {
         private readonly SpanishDB _context;
         private readonly IMapper _mapper;
+        private readonly ICategoryService _icategoryservice;
 
-        public CategoriesController(SpanishDB context, IMapper mapper)
+        public CategoriesController(SpanishDB context, IMapper mapper, ICategoryService icategoryservice)
         {
             _context = context;
             _mapper = mapper;
+            _icategoryservice = icategoryservice;
         }
 
         // GET: api/Categories

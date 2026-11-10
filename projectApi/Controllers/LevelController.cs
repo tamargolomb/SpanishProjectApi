@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BLL.Services;
 using DAL;
 using DTO.Levels;
 using Microsoft.AspNetCore.Mvc;
@@ -13,11 +14,13 @@ namespace projectApi.Controllers
         {
             private readonly SpanishDB _context;
             private readonly IMapper _mapper;
+        private readonly ILevelService _ilevelservice;
 
-            public LevelController(SpanishDB context, IMapper mapper)
+        public LevelController(SpanishDB context, IMapper mapper, ILevelService ilevelservice)
             {
                 _context = context;
                 _mapper = mapper;
+            _ilevelservice = ilevelservice;
             }
 
             // GET: api/Level

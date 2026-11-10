@@ -15,64 +15,28 @@ namespace projectApi.Controllers
     [Authorize]
     public class LessonController : ControllerBase
     {
-        private readonly SpanishDB _context;
-        private readonly IMapper _mapper;
         private readonly ILessonService _ilessonservice;
 
-        public LessonController(SpanishDB context, IMapper mapper, ILessonService ilessonservice)
+        public LessonController(ILessonService ilessonservice)
         {
-            _context = context;
-            _mapper = mapper;
             _ilessonservice = ilessonservice;
         }
 
-        // טעינת שיעור עם הקטגוריה, הרמה והמשתמש שהעלה אותו
-        private IQueryable<Lesson> GetLessonsWithDetails()
-        {
-            return _context.Lessons
-                .Include(l => l.Category)
-                .Include(l => l.Level)
-                .Include(l => l.user);
-        }
-
-        // GET: api/Lesson
         [HttpGet]
-        public async Task<ActionResult<List<ShowLessonDTO>>> GetLessons()
+        public ActionResult<List<ShowLessonDTO>> GetAll()
         {
-            var lessons = await GetLessonsWithDetails().ToListAsync();
-
-            var result = _mapper.Map<List<ShowLessonDTO>>(lessons);
-
-            // חישוב ממוצע הדירוג לכל שיעור
-            foreach (var item in result)
-            {
-                item.Rating = await _context.ReviewsAndRatings
-                    .Where(r => r.LessonId == item.LessonId)
-                    .Select(r => (double?)r.Rating)
-                    .AverageAsync() ?? 0;
-            }
-
-            return Ok(result);
+            return _ilessonservice.GetAllLessons();
         }
 
-        // GET: api/Lesson/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ShowLessonDTO>> GetLesson(int id)
+        [HttpGet("{id:int}")]
+        public ActionResult<ShowLessonDTO> GetById(int id)
         {
-            var lesson = await GetLessonsWithDetails()
-                .FirstOrDefaultAsync(l => l.LessonId == id);
-
-            if (lesson == null)
-                return NotFound("השיעור לא נמצא");
-
-            var result = _mapper.Map<ShowLessonDTO>(lesson);
-
-            result.Rating = await _context.ReviewsAndRatings
-                .Where(r => r.LessonId == id)
-                .Select(r => (double?)r.Rating)
-                .AverageAsync() ?? 0;
-
-            return Ok(result);
+            return Ok(_ilessonservice.GetLessonById(id));
+        }
+        [HttpPost]
+        public IActionResult Add([FromForm] AddLessonDTO dto)
+        {
+            return Ok(_ilessonservice.AddLesson(dto));
         }
 
         // POST: api/Lesson

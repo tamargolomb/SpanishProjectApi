@@ -9,8 +9,10 @@ namespace BLL.Services
 {
     public interface IReviewAndRatingService
     {
-        void Add(ReviewsAndRatings reviewAndRating);
-        void Update(ReviewsAndRatings reviewAndRating);
+        ShowReviewsAndRatingsDTO AddReview(AddResponseDTO dto);
+        ShowReviewsAndRatingsDTO UpdateReview(int id, UpdateRatingDTO dto);
         List<ShowReviewsAndRatingsDTO> GetAllreviews();
+        bool DeleteReview(int id, int userId);
+         
     }
 }

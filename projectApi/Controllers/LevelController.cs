@@ -32,7 +32,7 @@ namespace projectApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add([FromForm] AddLessonDTO dto)
+        public IActionResult Add([FromBody] AddLessonDTO dto)
         {
             return Ok(_ilevelservice.AddLevel(dto));
         }

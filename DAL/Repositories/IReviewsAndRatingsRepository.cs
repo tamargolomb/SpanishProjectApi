@@ -10,6 +10,8 @@ namespace DAL.Repositories
         void Add(ReviewsAndRatings ReviewAndRating);
         List<ReviewsAndRatings> GetAll();
         void Update(ReviewsAndRatings ReviewAndRating);
-     
+        bool Delete(int id);
+        ReviewsAndRatings? GetOwned(int id, int userId);
+        ReviewsAndRatings? GetById(int id);
     }
 }

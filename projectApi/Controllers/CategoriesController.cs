@@ -30,7 +30,7 @@ namespace projectApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add([FromForm] AddCategoriesDTO dto)
+        public IActionResult Add([FromBody] AddCategoriesDTO dto)
         {
             return Ok(_icategoryservice.AddCategory(dto));
         }

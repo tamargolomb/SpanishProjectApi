@@ -50,7 +50,7 @@ namespace projectApi.Controllers
             return NoContent();
         }
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] ShowLessonDTO dto)
+        public IActionResult Update(int id, [FromForm] ShowLessonDTO dto)
         {
             var updatedLesson = _ilessonservice.UpdateLesson(id, dto);
             if (updatedLesson == null)

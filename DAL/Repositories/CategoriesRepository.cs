@@ -13,6 +13,10 @@ namespace DAL.Repositories
         {
             _context = context;
         }
+        public bool Exists(int id)
+        {
+            return _context.Categories.Any(category => category.CategoryId == id);
+        }
 
 
         public void Add(Categories category)

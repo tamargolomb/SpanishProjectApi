@@ -39,6 +39,21 @@ namespace DAL.Repositories
             _context.Lessons.Update(Lesson);
             _context.SaveChanges();
         }
-    
+        public bool Delete(int id)
+        {
+            var lesson = _context.Lessons.Find(id);
+            if (lesson == null)
+                return false;
+
+            _context.Lessons.Remove(lesson);
+            _context.SaveChanges();
+            return true;
+        }
+
+        public Lesson? GetOwned(int id, int userId) =>
+            _context.Lessons.FirstOrDefault(r => r.LessonId == id && r.UserId == userId);
+
+        public List<Lesson> GetByUser(int userId) =>
+            _context.Lessons.Where(r => r.UserId == userId).ToList();
     }
 }

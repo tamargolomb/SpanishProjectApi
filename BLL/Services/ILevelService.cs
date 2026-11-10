@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using DTO.Lesson;
 using DTO.Levels;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,9 @@ namespace BLL.Services
 {
     public interface ILevelService
     {
-        void Add(Levels level);
-        void Update(Levels level);
+        ShowLevelDTO AddLevel(AddLessonDTO dto);
+        ShowLevelDTO UpdateLevel(int id, ShowLevelDTO dto);
         List<ShowLevelDTO> GetAllLevels();
+        ShowLevelDTO GetLevelById(int id);
     }
 }

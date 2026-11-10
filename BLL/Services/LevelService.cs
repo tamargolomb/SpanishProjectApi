@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using BLL.Exceptions;
 using DAL;
 using DAL.Repositories;
 using DTO;
+using DTO.Categories;
+using DTO.Lesson;
 using DTO.Levels;
 using DTO.User;
 using System;
@@ -19,18 +22,36 @@ namespace BLL.Services
             _LevelsRepository = levelsRepository;
             _mapper = mapper;
         }
-        public void Add(Levels level)
+        public ShowLevelDTO AddLevel(AddLessonDTO dto)
         {
+            var level = _mapper.Map<Levels>(dto);
             _LevelsRepository.Add(level);
+            return _mapper.Map<ShowLevelDTO>(level);
         }
-        public void Update(Levels level)
+        public ShowLevelDTO UpdateLevel(int id, ShowLevelDTO dto)
         {
-            _LevelsRepository.Update(level);
+            var existingLevel = _LevelsRepository.GetById(id);
+            if (existingLevel == null)
+                return null;
+
+            _mapper.Map(dto, existingLevel);
+            _LevelsRepository.Update(existingLevel);
+
+            return _mapper.Map<ShowLevelDTO>(existingLevel);
         }
         public List<ShowLevelDTO> GetAllLevels()
         {
             var levels = _LevelsRepository.GetAll();
             return _mapper.Map<List<ShowLevelDTO>>(levels);
+        }
+        public ShowLevelDTO GetLevelById(int id)
+        {
+            var level = _LevelsRepository.GetById(id);
+
+            if (level == null)
+                throw new NotFoundException($"level with id {id} was not found");
+
+            return _mapper.Map<ShowLevelDTO>(level);
         }
     }
 }

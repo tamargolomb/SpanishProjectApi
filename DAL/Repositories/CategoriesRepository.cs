@@ -39,8 +39,8 @@ namespace DAL.Repositories
             _context.SaveChanges();
             return true;
         }
-        public Categories? GetOwned(int id)=>
-           _context.Categories.FirstOrDefault(r => r.CategoryId == id);
+        public Categories? GetOwned(int id) =>
+           _context.Categories.FirstOrDefault(r => r.CategoryId == id );
 
     }
 }

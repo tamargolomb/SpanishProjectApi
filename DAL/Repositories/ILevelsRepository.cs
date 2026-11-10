@@ -10,6 +10,7 @@ namespace DAL.Repositories
         void Add(Levels Level);
         List<Levels> GetAll();
         void Update(Levels Level);
-     
+        Levels? GetById(int id);
+
     }
 }

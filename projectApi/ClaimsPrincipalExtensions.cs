@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace RecipeWeb
+namespace projectApi
 {
     public static class ClaimsPrincipalExtensions
     {

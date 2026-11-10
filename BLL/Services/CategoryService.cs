@@ -31,7 +31,7 @@ namespace BLL.Services
             var categories = _CategoriesRepository.GetAll();
             return _mapper.Map<List<ShowCategoriesDTO>>(categories);
         }
-        public bool DeleteCategory(int Categoryid, int userId)
+        public bool DeleteCategory(int Categoryid)
         {
             var category = _CategoriesRepository.GetOwned(Categoryid);
             if (category is null)

@@ -14,6 +14,7 @@ namespace DAL.Repositories
         bool Delete(int id);
         Lesson? GetOwned(int id, int userId);
         List<Lesson> GetByUser(int userId);
+        List<Lesson> SearchByName(string text, int max);
 
     }
 }

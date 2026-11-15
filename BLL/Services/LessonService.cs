@@ -86,6 +86,11 @@ namespace BLL.Services
             _LessonsRepository.Delete(id);
             return true;
         }
-
+        //public List<ShowLessonDTO> SearchLessons(string text, int max)
+        //{
+        //    return _LessonsRepository.SearchByName(text, max)
+        //       .Select(r => ToDto(r))   // אותה המרה ל-DTO שיש ב-GetAllRecipes
+        //       .ToList();
+        //}
     }
 }

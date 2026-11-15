@@ -9,6 +9,7 @@ namespace BLL.Services
 {
     public class AgentService: IAgentService
     {
+
         private const string SystemPrompt = """
            אתה מורה פרטי חכם ומומחה ללימוד ספרדית באתר.
            כאשר המשתמשת מבקשת להשתפר בנושא מסוים (כמו פעלים):

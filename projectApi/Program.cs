@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using OpenAI;
+using projectApi.Filters;
 using System.ClientModel;
 using System.Text;
 
@@ -64,6 +65,11 @@ builder.Services.AddAuthorization();
 var imagesFolder = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, builder.Configuration["ImagesFolder"]));
 Directory.CreateDirectory(imagesFolder);
 
+// Services
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>();
+});
 
 builder.Services.AddOpenApi();
 builder.Services.AddDbContext<SpanishDB>(options =>
@@ -96,7 +102,6 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAgentService, AgentService>();
 builder.Services.AddScoped<IPasswordHasher<Users>, PasswordHasher<Users>>();
 
-builder.Services.AddControllers();
 
 var app = builder.Build();
 

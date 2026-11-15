@@ -5,12 +5,60 @@ using DAL.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.AI;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
+using OpenAI;
+using System.ClientModel;
 using System.Text;
-using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//--------AI Agent
+var apiKey = builder.Configuration["GEMINI:APIKEY"];
+//?? throw new InvalidOperationException("Gemini:ApiKey is missing");
+// הכתובת של Gemini שמדברת בפורמט של OpenAI
+var options = new OpenAIClientOptions
+{
+    Endpoint = new Uri("https://generativelanguage.googleapis.com/v1beta/openai/")
+};
+IChatClient innerClient = new OpenAIClient(new ApiKeyCredential(apiKey), options)
+    .GetChatClient("gemini-2.5-flash")
+    .AsIChatClient();
+
+builder.Services.AddChatClient(innerClient)
+    .UseFunctionInvocation();   // מריץ את הכלים שהמודל מבקש
+
+builder.Services.AddScoped<IAgentService, AgentService>();
+
+//Jwt
+var jwtKey = builder.Configuration["Jwt:Key"];
+if (string.IsNullOrWhiteSpace(jwtKey))
+    throw new InvalidOperationException("Jwt:Key is missing. Set the environment variable Jwt__Key.");
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero,
+
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 
 var imagesFolder = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, builder.Configuration["ImagesFolder"]));
@@ -26,34 +74,10 @@ builder.Configuration.GetConnectionString("SpanishProject");
 builder.Services.AddAutoMapper( cfg =>
 {
     cfg.AddProfile<MappingProfile>();
-    //Jwt
-    var jwtKey = builder.Configuration["Jwt:Key"];
-    if (string.IsNullOrWhiteSpace(jwtKey))
-        throw new InvalidOperationException("Jwt:Key is missing. Set the environment variable Jwt__Key.");
-
-    builder.Services
-        .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-        {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-
-                ValidateAudience = true,
-                ValidAudience = builder.Configuration["Jwt:Audience"],
-
-                ValidateLifetime = true,
-                ClockSkew = TimeSpan.Zero,
-
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
-            };
-        });
-
-    builder.Services.AddAuthorization();
-
 });
+
+
+
 //DAL
 builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
 builder.Services.AddScoped<ILessonsRepository, LessonsRepository>();

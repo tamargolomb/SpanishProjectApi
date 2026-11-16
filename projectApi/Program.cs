@@ -18,19 +18,31 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 //--------AI Agent
-var apiKey = builder.Configuration["GEMINI:APIKEY"];
-//?? throw new InvalidOperationException("Gemini:ApiKey is missing");
-// הכתובת של Gemini שמדברת בפורמט של OpenAI
+var apiKey = builder.Configuration["Gemini:ApiKey"]
+    ?? throw new InvalidOperationException(
+        "Gemini:ApiKey is missing"
+    );
+
+
 var options = new OpenAIClientOptions
 {
-    Endpoint = new Uri("https://generativelanguage.googleapis.com/v1beta/openai/")
+    Endpoint = new Uri(
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+    )
 };
-IChatClient innerClient = new OpenAIClient(new ApiKeyCredential(apiKey), options)
-    .GetChatClient("gemini-2.5-flash")
-    .AsIChatClient();
+
+
+IChatClient innerClient = new OpenAIClient(
+    new ApiKeyCredential(apiKey),
+    options
+)
+.GetChatClient("gemini-2.5-flash")
+.AsIChatClient();
+
 
 builder.Services.AddChatClient(innerClient)
-    .UseFunctionInvocation();   // מריץ את הכלים שהמודל מבקש
+    .UseFunctionInvocation();
+
 
 builder.Services.AddScoped<IAgentService, AgentService>();
 

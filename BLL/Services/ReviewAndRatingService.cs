@@ -2,6 +2,7 @@
 using DAL;
 using DAL.Repositories;
 using DTO;
+using DTO.Categories;
 using DTO.ReviewsAndRatings;
 using DTO.User;
 using System;
@@ -19,18 +20,38 @@ namespace BLL.Services
             _ReviewsAndRatingsRepository = reviewsAndRatingsRepository;
             _mapper = mapper;
         }
-        public void Add(ReviewsAndRatings reviewAndRating)
+        public ShowReviewsAndRatingsDTO AddReview(AddResponseDTO dto)
         {
-            _ReviewsAndRatingsRepository.Add(reviewAndRating);
+            var review = _mapper.Map<ReviewsAndRatings>(dto);
+            _ReviewsAndRatingsRepository.Add(review);
+            return _mapper.Map<ShowReviewsAndRatingsDTO>(review);
         }
-        public void Update(ReviewsAndRatings reviewAndRating)
+        public ShowReviewsAndRatingsDTO UpdateReview(int id, UpdateRatingDTO dto)
         {
-            _ReviewsAndRatingsRepository.Update(reviewAndRating);
+            var existingReview = _ReviewsAndRatingsRepository.GetById(id);
+            if (existingReview == null)
+                return null;
+            if (existingReview.Rating != dto.Rating)
+            {
+                existingReview.Rating = dto.Rating;
+                _ReviewsAndRatingsRepository.Update(existingReview);
+            }
+            return _mapper.Map<ShowReviewsAndRatingsDTO>(existingReview);
         }
         public List<ShowReviewsAndRatingsDTO> GetAllreviews()
         {
             var reviews = _ReviewsAndRatingsRepository.GetAll();
             return _mapper.Map<List<ShowReviewsAndRatingsDTO>>(reviews);
         }
+        public bool DeleteReview(int id, int userId)
+        {
+            var review = _ReviewsAndRatingsRepository.GetOwned(id, userId);
+            if (review is null)
+                return false;
+
+            _ReviewsAndRatingsRepository.Delete(id);
+            return true;
+        }
+    
     }
 }

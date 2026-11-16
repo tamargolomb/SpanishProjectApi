@@ -9,7 +9,9 @@ namespace DAL.Repositories
     public interface ICategoriesRepository
     {
         void Add(Categories category);            
-        List<Categories> GetAll();               
-
+        List<Categories> GetAll();
+        bool Exists(int id);
+        bool Delete(int id);
+        Categories? GetOwned(int id);
     }
 }

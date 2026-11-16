@@ -2,6 +2,7 @@
 using DAL;
 using DAL.Repositories;
 using DTO;
+using DTO.Lesson;
 using DTO.User;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -24,10 +25,10 @@ namespace BLL.Services
             _hasher = hasher;
         }
 
-        public Users? GetById(int id)
-        {
-            return _UsersRepository.GetById(id);
-        }
+        //public Users? GetById(int id)
+        //{
+        //    return _UsersRepository.GetById(id);
+        //}
 
         public bool Register(AddUserDTO dto)
         {
@@ -57,9 +58,25 @@ namespace BLL.Services
             var users = _UsersRepository.GetAll();
             return _mapper.Map<List<ShowUserDTO>>(users);
         }
-        public void Update(Users user)
+        public ShowUserDTO UpdateUser(int id, UpdateUserDTO dto)
         {
-            _UsersRepository.Update(user);
+            var existingUser = _UsersRepository.GetById(id);
+            if (existingUser == null)
+                return null;
+
+            _mapper.Map(dto, existingUser);
+            _UsersRepository.Update(existingUser);
+
+            return _mapper.Map<ShowUserDTO>(existingUser);
+        }
+        public bool DeleteUser(int id)
+        {
+            var user = _UsersRepository.GetOwned(id);
+            if (user is null)
+                return false;
+
+            _UsersRepository.Delete(id);
+            return true;
         }
     }
 }

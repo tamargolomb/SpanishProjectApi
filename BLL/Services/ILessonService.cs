@@ -9,9 +9,11 @@ namespace BLL.Services
 {
     public interface ILessonService
     {
-        ShowLessonDTO Add(AddLessonDTO lessonDTO);
-        ShowLessonDTO GetById(int id);
-        void Update(Lesson lesson);
+        ShowLessonDTO AddLesson(AddLessonDTO lessonDTO);
+        ShowLessonDTO GetLessonById(int id);
+        ShowLessonDTO UpdateLesson(int id, ShowLessonDTO dto);
         List<ShowLessonDTO> GetAllLessons();
+        bool DeleteLesson(int id, int userId);
+        //List<ShowLessonDTO> SearchLessons(string text, int max);
     }
 }

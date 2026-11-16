@@ -29,6 +29,10 @@ namespace DAL.Repositories
             _context.Levels.Update(Level);
             _context.SaveChanges();
         }
-       
+        public Levels? GetById(int id)
+        {
+            return _context.Levels
+              .FirstOrDefault(r => r.LevelId == id);
+        }
     }
 }

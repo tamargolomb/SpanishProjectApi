@@ -15,24 +15,24 @@ namespace projectApi.Controllers
     
     public class UserController : ControllerBase
     {
-        private readonly IUserService _iuserService;
+        private readonly IUserService _userService;
 
         public UserController(IUserService iuserService)
         {
-            _iuserService = iuserService;
+            _userService = iuserService;
         }
 
         [HttpPost("register")]
         public IActionResult Register(AddUserDTO dto)
         {
-            _iuserService.Register(dto);
+            _userService.Register(dto);
             return Ok();
         }
 
         [HttpPost("login")]
         public ActionResult<AuthResponseDto> Login(LoginUserDTO dto)
         {
-            var result = _iuserService.Login(dto);
+            var result = _userService.Login(dto);
             if (result is null)
                 return Unauthorized("Wrong email or password.");
 
@@ -43,14 +43,15 @@ namespace projectApi.Controllers
         [HttpGet]
         public ActionResult<List<ShowUserDTO>> GetAll()
         {
-            return _iuserService.GetAllUsers();
+            var users = _userService.GetAllUsers();
+            return Ok(users);
         }
 
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
-            if (!_iuserService.DeleteUser(id))
+            if (!_userService.DeleteUser(id))
                 return NotFound();
 
             return NoContent();
@@ -60,12 +61,27 @@ namespace projectApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] UpdateUserDTO dto)
         {
-            var updatedLesson = _iuserService.UpdateUser(id, dto);
+            var updatedLesson = _userService.UpdateUser(id, dto);
             if (updatedLesson == null)
                 return NotFound();
 
             return Ok(updatedLesson);
         }
+
+        //[HttpGet("{id}")]
+        //[Authorize(Roles = "Admin")]
+        //public ActionResult<ShowUserDTO> GetUserById(int id)
+        //{
+        //    var user = _userService.GetUserById(id);
+        //    return Ok(user);
+        //}
+
+
+
+
+
+
+
 
         //// GET: api/User
         //[HttpGet]

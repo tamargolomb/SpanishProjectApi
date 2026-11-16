@@ -20,7 +20,7 @@ namespace projectApi.Controllers
 
         public ReviewsAndRatingsController(IReviewAndRatingService ireviewandratingservice)
         {
-        _ireviewandratingservice= ireviewandratingservice;
+             _ireviewandratingservice= ireviewandratingservice;
         }
 
         [AllowAnonymous]

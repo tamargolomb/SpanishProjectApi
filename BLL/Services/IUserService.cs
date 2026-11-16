@@ -10,7 +10,7 @@ namespace BLL.Services
 {
     public interface IUserService
     {
-        //Users? GetById(int id);
+        //ShowUserDTO GetUserById(int id);
         bool Register(AddUserDTO dto);
         AuthResponseDto? Login(LoginUserDTO dto);
         List<ShowUserDTO> GetAllUsers();

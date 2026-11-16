@@ -30,16 +30,34 @@ namespace BLL.Services
         //    return _UsersRepository.GetById(id);
         //}
 
-        public bool Register(AddUserDTO dto)
+
+
+        public AuthResponseDto? Register(AddUserDTO dto)
         {
             var email = dto.UserEmail.Trim().ToLowerInvariant();
+
             if (_UsersRepository.EmailExists(email))
-                return false;
-            var user = new Users { UserEmail = email, Role = "User" };
-            user.UserPassword = _hasher.HashPassword(user, dto.UserPassword);
+                return null;
+
+            var user = new Users
+            {
+                UserName = dto.UserName.Trim(),
+                UserEmail = email,
+                Role = "User",
+                JoinDate = DateTime.UtcNow,
+                Score = 0,
+                LevelId = null
+            };
+
+            user.UserPassword =
+                _hasher.HashPassword(user, dto.UserPassword);
+
             _UsersRepository.Add(user);
-            return true;
+
+            return _tokens.CreateToken(user);
         }
+
+
         public AuthResponseDto? Login(LoginUserDTO dto)
         {
             var email = dto.UserEmail.Trim().ToLowerInvariant();

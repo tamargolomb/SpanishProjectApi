@@ -22,12 +22,26 @@ namespace projectApi.Controllers
             _userService = iuserService;
         }
 
+
         [HttpPost("register")]
-        public IActionResult Register(AddUserDTO dto)
+
+        public ActionResult<AuthResponseDto> Register(
+           [FromBody] AddUserDTO dto)
         {
-            _userService.Register(dto);
-            return Ok();
+            var result = _userService.Register(dto);
+
+            if (result is null)
+            {
+                return Conflict(new
+                {
+                    message = "An account with this email already exists."
+                });
+            }
+
+            return Ok(result);
         }
+
+
 
         [HttpPost("login")]
         public ActionResult<AuthResponseDto> Login(LoginUserDTO dto)

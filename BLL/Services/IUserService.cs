@@ -11,7 +11,7 @@ namespace BLL.Services
     public interface IUserService
     {
         //ShowUserDTO GetUserById(int id);
-        bool Register(AddUserDTO dto);
+        AuthResponseDto? Register(AddUserDTO dto);
         AuthResponseDto? Login(LoginUserDTO dto);
         List<ShowUserDTO> GetAllUsers();
         ShowUserDTO UpdateUser(int id, UpdateUserDTO dto);

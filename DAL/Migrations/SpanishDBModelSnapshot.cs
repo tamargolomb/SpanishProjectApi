@@ -165,7 +165,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("JoinDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("LevelId")
+                    b.Property<int?>("LevelId")
                         .HasColumnType("int");
 
                     b.Property<string>("Role")
@@ -248,8 +248,7 @@ namespace DAL.Migrations
                     b.HasOne("DAL.Levels", "Level")
                         .WithMany("Users")
                         .HasForeignKey("LevelId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Level");
                 });

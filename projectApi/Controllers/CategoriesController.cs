@@ -23,6 +23,7 @@ namespace projectApi.Controllers
             _icategoryservice = icategoryservice;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult<List<ShowCategoriesDTO>> GetAll()
         {

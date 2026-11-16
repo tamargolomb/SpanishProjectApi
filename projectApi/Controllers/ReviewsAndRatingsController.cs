@@ -7,6 +7,7 @@ using DTO.ReviewsAndRatings;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using projectApi.Extensions;
 
 namespace projectApi.Controllers
 {
@@ -22,6 +23,7 @@ namespace projectApi.Controllers
         _ireviewandratingservice= ireviewandratingservice;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult<List<ShowReviewsAndRatingsDTO>> GetAll()
         {

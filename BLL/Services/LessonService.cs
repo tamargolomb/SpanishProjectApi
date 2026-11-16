@@ -24,13 +24,14 @@ namespace BLL.Services
             _imageService = imageService;
             _categoryRepository = categoryRepository;
         }
-        public ShowLessonDTO AddLesson(AddLessonDTO lessonDTO)
+        public ShowLessonDTO AddLesson(AddLessonDTO lessonDTO, int userId)
         {
 
             if (!_categoryRepository.Exists(lessonDTO.CategoryId))
                 throw new BusinessRuleException("The selected category does not exist");
 
             var lesson = _mapper.Map<Lesson>(lessonDTO);
+            lesson.UserId = userId;
 
             if (lessonDTO.image != null)
             {

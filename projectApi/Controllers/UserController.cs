@@ -12,7 +12,7 @@ namespace projectApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    
     public class UserController : ControllerBase
     {
         private readonly IUserService _iuserService;
@@ -38,12 +38,15 @@ namespace projectApi.Controllers
 
             return Ok(result);
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult<List<ShowUserDTO>> GetAll()
         {
             return _iuserService.GetAllUsers();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
@@ -53,6 +56,7 @@ namespace projectApi.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] UpdateUserDTO dto)
         {

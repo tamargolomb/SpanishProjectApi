@@ -7,6 +7,7 @@ using DTO.Lesson;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using projectApi.Extensions;
 
 namespace projectApi.Controllers
 {
@@ -22,22 +23,39 @@ namespace projectApi.Controllers
             _ilessonservice = ilessonservice;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult<List<ShowLessonDTO>> GetAll()
         {
             return _ilessonservice.GetAllLessons();
         }
 
+        [AllowAnonymous]
         [HttpGet("{id:int}")]
         public ActionResult<ShowLessonDTO> GetById(int id)
         {
             return Ok(_ilessonservice.GetLessonById(id));
         }
 
+        //[HttpGet("mine")]
+        //public ActionResult<List<ShowLessonDTO>> GetMine()
+        //{
+        //    return Ok(_ilessonservice.GetMine(User.GetUserId()));
+        //}
+
         [HttpPost]
         public IActionResult Add([FromForm] AddLessonDTO dto)
         {
-            return Ok(_ilessonservice.AddLesson(dto));
+            try
+            {
+                var result = _ilessonservice.AddLesson(dto, User.GetUserId());
+                return CreatedAtAction(nameof(GetById), new { id = result.LessonId }, result);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+           
         }
 
 

@@ -16,6 +16,18 @@ using System.ClientModel;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 //--------AI Agent
 var apiKey = builder.Configuration["Gemini:ApiKey"]
@@ -117,6 +129,13 @@ builder.Services.AddScoped<IPasswordHasher<Users>, PasswordHasher<Users>>();
 
 
 var app = builder.Build();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
+}
+
 
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -131,6 +150,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("ReactPolicy");
+
 app.UseAuthentication();
 
 app.UseAuthorization();

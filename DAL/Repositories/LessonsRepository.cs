@@ -55,7 +55,7 @@ namespace DAL.Repositories
 
         public List<Lesson> GetByUser(int userId) =>
             _context.Lessons.Where(r => r.UserId == userId).ToList();
-        List<Lesson> SearchByName(string text, int max)
+        public List<Lesson> SearchByName(string text, int max)
         {
             return _context.Lessons
        .Where(r => r.LessonTitle.Contains(text))

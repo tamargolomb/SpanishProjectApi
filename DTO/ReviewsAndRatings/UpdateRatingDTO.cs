@@ -11,7 +11,7 @@ namespace DTO.ReviewsAndRatings
     public class UpdateRatingDTO
     {
         [Required]
-        public int? Rating { get; set; }
+        public int Rating { get; set; }
     }
 
 }

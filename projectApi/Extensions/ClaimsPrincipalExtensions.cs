@@ -1,8 +1,8 @@
 ﻿using System.Security.Claims;
 
-namespace projectApi
+namespace projectApi.Extensions
 {
-    public static class ClaimsPrincipalExtensions
+    public  static class ClaimsPrincipalExtensions
     {
         public static int GetUserId(this ClaimsPrincipal user)
         {

@@ -96,14 +96,15 @@ builder.Services.AddAutoMapper( cfg =>
 
 
 
-//DAL
+//Repositories
 builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
 builder.Services.AddScoped<ILessonsRepository, LessonsRepository>();
 builder.Services.AddScoped<ILevelsRepository, LevelsRepository>();
 builder.Services.AddScoped<IReviewsAndRatingsRepository, ReviewsAndRatingsRepository>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
-// BLL
+// Services
+builder.Services.AddDataProtection();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddSingleton<IImageService>(new ImageService(imagesFolder));

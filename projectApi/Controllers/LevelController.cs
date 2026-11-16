@@ -22,10 +22,12 @@ namespace projectApi.Controllers
         {
             _ilevelservice = ilevelservice;
         }
+        [HttpGet]
         public ActionResult<List<ShowLevelDTO>> GetAll()
         {
             return _ilevelservice.GetAllLevels();
         }
+        [HttpGet("{id}")]
         public ActionResult<ShowLevelDTO> GetById(int id)
         {
             return Ok(_ilevelservice.GetLevelById(id));

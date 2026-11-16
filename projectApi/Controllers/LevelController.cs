@@ -22,14 +22,17 @@ namespace projectApi.Controllers
         {
             _ilevelservice = ilevelservice;
         }
+
+        [AllowAnonymous]
+        [HttpGet]
         public ActionResult<List<ShowLevelDTO>> GetAll()
         {
             return _ilevelservice.GetAllLevels();
         }
-        public ActionResult<ShowLevelDTO> GetById(int id)
-        {
-            return Ok(_ilevelservice.GetLevelById(id));
-        }
+        //public ActionResult<ShowLevelDTO> GetById(int id)
+        //{
+        //    return Ok(_ilevelservice.GetLevelById(id));
+        //}
 
         [HttpPost]
         public IActionResult Add([FromBody] AddLessonDTO dto)

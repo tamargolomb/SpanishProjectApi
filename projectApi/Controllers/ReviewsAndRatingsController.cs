@@ -13,7 +13,7 @@ namespace projectApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    
     public class ReviewsAndRatingsController : ControllerBase
     {
         private readonly IReviewAndRatingService _ireviewandratingservice;
@@ -37,7 +37,7 @@ namespace projectApi.Controllers
         }
 
 
-       
+        [Authorize]
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
@@ -47,6 +47,7 @@ namespace projectApi.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] UpdateRatingDTO dto)
         {

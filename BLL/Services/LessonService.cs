@@ -96,11 +96,25 @@ namespace BLL.Services
         public bool DeleteLesson(int id, int userId)
         {
             var lesson = _LessonsRepository.GetOwned(id, userId);
+
             if (lesson is null)
                 return false;
 
-            _LessonsRepository.Delete(id);
-            return true;
+            var imageName = lesson.image;
+            var fileName = lesson.FileUrl;
+
+            bool deleted = _LessonsRepository.Delete(id);
+
+            if (deleted)
+            {
+                if (!string.IsNullOrEmpty(imageName))
+                    _imageService.Delete(imageName);
+
+                if (!string.IsNullOrEmpty(fileName))
+                    _fileService.Delete(fileName);
+            }
+
+            return deleted;
         }
         //public List<ShowLessonDTO> SearchLessons(string text, int max)
         //{

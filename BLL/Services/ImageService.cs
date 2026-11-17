@@ -16,7 +16,10 @@ namespace BLL.Services
 
         public void Delete(string fileName)
         {
-         
+            var imagePath = Path.Combine(_folder, fileName);
+
+            if (File.Exists(imagePath))
+                File.Delete(imagePath);
         }
 
         public string Save(IFormFile file)

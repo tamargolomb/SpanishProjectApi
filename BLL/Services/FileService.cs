@@ -66,10 +66,10 @@ namespace BLL.Services
 
         public void Delete(string fileName)
         {
-            var filePath = GetFilePath(fileName);
+            var imagePath = Path.Combine(_folder, fileName);
 
-            if (File.Exists(filePath))
-                File.Delete(filePath);
+            if (File.Exists(imagePath))
+                File.Delete(imagePath);
         }
         public Stream GetFileStream(string fileName)
         {

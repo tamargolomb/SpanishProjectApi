@@ -105,5 +105,17 @@ namespace BLL.Services
         {
             return _UsersRepository.Delete(id);            
         }
+
+        public async Task<bool> UpdateUserLevelAsync(
+            int userId,
+            int levelId,
+            CancellationToken ct)
+        {
+            return await _UsersRepository.UpdateUserLevelAsync(
+                userId,
+                levelId,
+                ct);
+        }
+
     }
 }

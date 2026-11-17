@@ -13,36 +13,76 @@ namespace BLL.Services
         private readonly IChatClient _chatClient;
 
         private const string SystemPrompt = """
-            You are a professional Spanish language examiner.
+            
+            You are an expert Spanish placement test question writer
+            for an English-language educational website.
 
-            Your task is to generate placement-test questions
-            for students learning Spanish.
+            The website interface language is English.
+            The language being assessed is Spanish.
 
-            Generate exactly one multiple-choice question.
+            Generate exactly ONE multiple-choice question
+            appropriate for the requested Spanish proficiency level.
 
-            Requirements:
-            - Use the requested CEFR difficulty level.
-            - Test Spanish vocabulary or grammar.
-            - Provide exactly four answer options.
-            - Exactly one option must be correct.
-            - Avoid ambiguous questions.
-            - Return only valid JSON.
-            - Do not include Markdown formatting.
+            LANGUAGE RULES:
+            - All instructions and question wording must be in English.
+            - Spanish words, phrases, and sentences may appear as the
+              language-learning content being tested.
+            - Never write instructions or questions entirely in Spanish.
+            - Never mix Spanish instructions with English sentences.
+            - Translation questions must clearly specify the direction:
+              English to Spanish or Spanish to English.
+            - Never use Hebrew or any other interface language.
 
-            Use this JSON structure:
+            DIFFICULTY RULES:
+
+            BEGINNER:
+            - Assume the student may have ZERO prior Spanish knowledge.
+            - Focus on very basic vocabulary, greetings, numbers,
+              colors, common objects, and simple expressions.
+            - Use short and clear English questions.
+            - Prefer recognition of individual Spanish words.
+            - Avoid verb conjugation questions in early beginner questions.
+            - Avoid long Spanish sentences, advanced grammar,
+              and complicated vocabulary.
+            - Make distractors simple and clearly distinguishable.
+
+            INTERMEDIATE:
+            - Use everyday conversations and common grammar.
+            - Include basic past and future tenses.
+            - Test sentence comprehension and common verb forms.
+            - Keep the English instructions clear and concise.
+
+            ADVANCED:
+            - Test complex Spanish grammar and vocabulary.
+            - Include nuanced sentence meanings and reading comprehension.
+            - Use challenging but unambiguous questions.
+
+            QUESTION QUALITY RULES:
+            - Exactly four answer options.
+            - Exactly one correct answer.
+            - All options must be plausible and clearly written.
+            - Avoid trick questions and ambiguous answers.
+            - Avoid repeating the same question.
+            - Match the difficulty to the requested level.
+            - Do not include explanations or hints.
+
+            OUTPUT RULES:
+            Return ONLY a valid JSON object.
+            Do not include Markdown or additional text.
+
+            Required JSON format:
             {
-              "question": "Question text",
-              "level": "A1",
+              "question": "How do you say 'Hello' in Spanish?",
+              "level": "Beginner",
               "options": [
-                "Option 1",
-                "Option 2",
-                "Option 3",
-                "Option 4"
+                "Hola",
+                "Gracias",
+                "Adiós",
+                "Por favor"
               ],
               "correctAnswerIndex": 0
             }
-
-            The correctAnswerIndex must be an integer from 0 to 3.
+            
             """;
 
         public AssessmentService(IChatClient chatClient)
@@ -107,47 +147,44 @@ namespace BLL.Services
             return question;
         }
 
+
         public async Task<int> ChooseNextLevelAsync(
             List<ShowLevelDTO> levels,
             List<AssessmentAnswerHistoryDto> history,
-            CancellationToken ct)
+            CancellationToken ct,
+            bool isFinal = false)
         {
-            if (levels.Count == 0)
-            {
-                throw new InvalidOperationException(
-                    "No levels are available.");
-            }
+            if (levels == null || levels.Count == 0)
+                throw new InvalidOperationException("No levels are available.");
 
             var levelsJson = JsonSerializer.Serialize(levels);
             var historyJson = JsonSerializer.Serialize(history);
+
+            var taskInstruction = isFinal
+                ? "The assessment is finished. Choose the level that best represents the student's demonstrated Spanish ability. Do not choose a harder level just to challenge the student."
+                : history.Count == 0
+                    ? "This is the first question. Choose an accessible starting level for a placement assessment."
+                    : "Choose the most suitable difficulty level for the next question. Increase difficulty when the student demonstrates mastery and decrease difficulty when the student struggles.";
 
             var messages = new List<ChatMessage>
     {
         new ChatMessage(
             ChatRole.System,
             """
-            You are an adaptive Spanish placement examiner.
+            You are an expert adaptive Spanish placement examiner.
 
-            Your task is to select the most suitable difficulty
-            level for the student's next question.
+            You receive available levels and student answer history.
 
-            You will receive:
-            1. The available levels with their IDs, names and descriptions.
-            2. The student's previous questions and answers.
+            Evaluate performance across the entire history.
+            Consider correct answers, incorrect answers, and question difficulty.
+            Use level names and descriptions to understand the difficulty.
+            Do not assume that LevelId represents difficulty order.
+            Select only a LevelId that exists in the provided levels.
+            Never invent a level.
+            Return only valid JSON without Markdown or explanations.
 
-            Rules:
-            - Evaluate the student's performance across the full history.
-            - Consider both correct and incorrect answers.
-            - Use the level names and descriptions to understand difficulty.
-            - Increase difficulty when the student demonstrates mastery.
-            - Decrease difficulty when the student struggles.
-            - Select only a LevelId from the provided levels.
-            - Never invent new levels.
-            - Return only a JSON object with a levelId integer.
-            - Do not include explanations or Markdown.
-            -If the answer history is empty, select an accessible starting level suitable for a new placement assessment.
-            Example:
-            {"levelId": 3}
+            Required JSON format:
+            {"levelId": 1}
             """
         ),
         new ChatMessage(
@@ -156,10 +193,13 @@ namespace BLL.Services
             Available levels:
             {levelsJson}
 
-            Student answer history:
+            Answer history:
             {historyJson}
 
-            Select the level for the next question.
+            Task:
+            {taskInstruction}
+
+            Return the selected level ID.
             """
         )
     };
@@ -168,24 +208,42 @@ namespace BLL.Services
                 messages,
                 cancellationToken: ct);
 
-            var json = response.Text?.Trim()
-                ?? throw new InvalidOperationException(
-                    "The AI returned an empty response.");
+            var json = response.Text?.Trim();
+
+            if (string.IsNullOrWhiteSpace(json))
+                throw new InvalidOperationException("AI returned an empty response.");
+
+            if (json.StartsWith("```"))
+            {
+                var firstLineEnd = json.IndexOf('\n');
+                var lastFence = json.LastIndexOf("```", StringComparison.Ordinal);
+
+                if (firstLineEnd < 0 || lastFence <= firstLineEnd)
+                    throw new InvalidOperationException("Invalid AI response format.");
+
+                json = json.Substring(
+                    firstLineEnd + 1,
+                    lastFence - firstLineEnd - 1).Trim();
+            }
 
             using var document = JsonDocument.Parse(json);
 
-            var levelId = document.RootElement
-                .GetProperty("levelId")
-                .GetInt32();
+            if (!document.RootElement.TryGetProperty(
+                "levelId",
+                out var levelIdElement))
+            {
+                throw new InvalidOperationException("AI did not return a level ID.");
+            }
+
+            var levelId = levelIdElement.GetInt32();
 
             if (!levels.Any(l => l.LevelId == levelId))
-            {
                 throw new InvalidOperationException(
-                    "The AI selected a level that does not exist.");
-            }
+                    "AI selected a level that does not exist.");
 
             return levelId;
         }
+
 
 
     }

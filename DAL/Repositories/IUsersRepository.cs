@@ -14,5 +14,6 @@ namespace DAL.Repositories
         bool EmailExists(string email);
         void Update(Users User);
         bool Delete(int id);
+        Task<bool> UpdateUserLevelAsync( int userId,int levelId,CancellationToken ct);
     }
 }

@@ -23,49 +23,6 @@ namespace projectApi.Controllers
             _levelService = levelService;
             _sessionService = sessionService;
         }
-
-        [HttpPost("generate-question")]
-        public async Task<IActionResult> GenerateQuestion(
-            [FromBody] GenerateQuestionRequest request,
-            CancellationToken ct)
-        {
-            if (string.IsNullOrWhiteSpace(request.Level))
-            {
-                return BadRequest(new
-                {
-                    message = "Level is required."
-                });
-            }
-
-            var levels = _levelService.GetAllLevels();
-
-            var selectedLevel = levels.FirstOrDefault(
-                l => string.Equals(
-                    l.LevelName,
-                    request.Level.Trim(),
-                    StringComparison.OrdinalIgnoreCase
-                )
-            );
-
-            if (selectedLevel == null)
-            {
-                return BadRequest(new
-                {
-                    message = "The requested level does not exist."
-                });
-            }
-
-            var question = await _assessmentService.GenerateQuestionAsync(
-                selectedLevel.LevelName,
-                ct);
-
-            return Ok(new
-            {
-                question
-            });
-        }
-
-
         [HttpPost("start")]
         public async Task<IActionResult> Start(CancellationToken ct)
         {
@@ -96,12 +53,7 @@ namespace projectApi.Controllers
             )?.Value;
 
             if (string.IsNullOrWhiteSpace(userId))
-            {
-                return Unauthorized(new
-                {
-                    message = "User ID was not found in the token."
-                });
-            }
+                return Unauthorized();
 
             try
             {
@@ -129,6 +81,7 @@ namespace projectApi.Controllers
                 return Conflict(new { message = ex.Message });
             }
         }
+
 
         public class GenerateQuestionRequest
         {

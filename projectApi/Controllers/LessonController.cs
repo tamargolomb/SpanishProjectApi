@@ -33,7 +33,7 @@ namespace projectApi.Controllers
             return _ilessonservice.GetLessons();
         }
 
-        [HttpGet]
+        [HttpGet("lessons")]
         public IActionResult GetLessons([FromQuery] int? levelId,[FromQuery] int? categoryId)
         {
             var lessons = _ilessonservice.GetLessons(levelId, categoryId);

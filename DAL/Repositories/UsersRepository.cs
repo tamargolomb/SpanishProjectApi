@@ -56,5 +56,24 @@ namespace DAL.Repositories
             _context.SaveChanges();
             return true;
         }
+
+        public async Task<bool> UpdateUserLevelAsync(
+            int userId,
+            int levelId,
+            CancellationToken ct)
+        {
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.UserId == userId, ct);
+
+            if (user == null)
+                return false;
+
+            user.LevelId = levelId;
+
+            await _context.SaveChangesAsync(ct);
+
+            return true;
+        }
+
     }
 }

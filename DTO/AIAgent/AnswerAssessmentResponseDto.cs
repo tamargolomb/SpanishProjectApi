@@ -13,5 +13,9 @@ namespace DTO.AIAgent
         public bool IsFinished { get; set; }
 
         public AssessmentQuestionDto? NextQuestion { get; set; }
+
+        public int? FinalLevelId { get; set; }
+
+        public string? FinalLevelName { get; set; }
     }
 }

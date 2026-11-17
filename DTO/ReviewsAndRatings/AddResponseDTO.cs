@@ -13,7 +13,7 @@ namespace DTO.ReviewsAndRatings
         [Required]
         public int? LessonId { get; set; }
 
-        [Required]
+        [Range(0, 5)]
         public int? Rating { get; set; }
 
         [Required(ErrorMessage = "review text is required")]

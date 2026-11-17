@@ -13,6 +13,7 @@ namespace projectApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     
     public class ReviewsAndRatingsController : ControllerBase
     {
@@ -23,7 +24,7 @@ namespace projectApi.Controllers
              _ireviewandratingservice= ireviewandratingservice;
         }
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult<List<ShowReviewsAndRatingsDTO>> GetAll()
         {
@@ -31,13 +32,17 @@ namespace projectApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add([FromBody] AddResponseDTO dto)
+        public IActionResult Add(int id,[FromBody] AddResponseDTO dto)
         {
-            return Ok(_ireviewandratingservice.AddReview(dto));
+            var userId = User.GetUserId();
+
+            var review = _ireviewandratingservice.AddReview(userId, dto);
+
+            return Ok(review);
         }
 
 
-        [Authorize]
+  
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
@@ -47,11 +52,11 @@ namespace projectApi.Controllers
             return NoContent();
         }
 
-        [Authorize]
+       
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] UpdateRatingDTO dto)
         {
-            var updatedReview = _ireviewandratingservice.UpdateReview(id, dto);
+            var updatedReview = _ireviewandratingservice.UpdateReview(id, dto, User.GetUserId());
             if (updatedReview == null)
                 return NotFound();
 

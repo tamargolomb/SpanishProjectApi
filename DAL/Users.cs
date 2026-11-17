@@ -16,6 +16,9 @@ namespace DAL
         public DateTime JoinDate { get; set; }
         public int Score { get; set; }
         public string Role { get; set; } = "User";
+        public bool IsEmailVerified { get; set; }
+        public string? VerificationCode { get; set; }
+        public DateTime? VerificationCodeExpiresAt {  get; set; }
         public Levels? Level {  get; set; }
         public  List<Lesson> Lessons { get; set; } = new();
         public  List<ReviewsAndRatings> ReviewsAndRatings { get; set; }

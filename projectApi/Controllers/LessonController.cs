@@ -48,11 +48,11 @@ namespace projectApi.Controllers
             return Ok(_ilessonservice.GetLessonById(id));
         }
 
-        //[HttpGet("mine")]
-        //public ActionResult<List<ShowLessonDTO>> GetMine()
-        //{
-        //    return Ok(_ilessonservice.GetMine(User.GetUserId()));
-        //}
+        [HttpGet("mine")]
+        public ActionResult<List<ShowLessonDTO>> GetMine()
+        {
+            return Ok(_ilessonservice.GetMine(User.GetUserId()));
+        }
 
         [HttpPost]
         public IActionResult Add([FromForm] AddLessonDTO dto)

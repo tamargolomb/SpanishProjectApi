@@ -14,6 +14,8 @@ namespace BLL.Services
         bool UpdateLesson(int id);
         List<ShowLessonDTO> GetLessons(int? levelId = null, int? categoryId = null);
         bool DeleteLesson(int id, int userId);
+
+        List<ShowLessonDTO> GetMine(int userId);
         //List<ShowLessonDTO> SearchLessons(string text, int max);
     }
 }

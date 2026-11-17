@@ -7,6 +7,7 @@ using DTO.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace projectApi.Controllers
 {
@@ -78,11 +79,14 @@ namespace projectApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] UpdateUserDTO dto)
         {
-            var updatedLesson = _userService.UpdateUser(id, dto);
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            if (id != currentUserId)
+                return Forbid();
+
             try
             {
-                var updatedUser =
-                    _userService.UpdateUser(id, dto);
+                var updatedUser = _userService.UpdateUser(id, dto);
 
                 if (updatedUser == null)
                     return NotFound();

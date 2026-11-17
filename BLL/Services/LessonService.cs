@@ -123,6 +123,14 @@ namespace BLL.Services
 
             return deleted;
         }
+        public List<ShowLessonDTO> GetMine(int userId)
+        {
+            var lessons = _LessonsRepository.GetAll()
+                .Where(l => l.UserId == userId)
+                .ToList();
+
+            return _mapper.Map<List<ShowLessonDTO>>(lessons);
+        }
         //public List<ShowLessonDTO> SearchLessons(string text, int max)
         //{
         //    return _LessonsRepository.SearchByName(text, max)

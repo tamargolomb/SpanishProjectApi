@@ -10,7 +10,8 @@ namespace DTO.ReviewsAndRatings
 
     public class UpdateRatingDTO
     {
-        [Required]
+
+        [Range(0, 5)]
         public int Rating { get; set; }
     }
 

@@ -20,22 +20,29 @@ namespace BLL.Services
             _ReviewsAndRatingsRepository = reviewsAndRatingsRepository;
             _mapper = mapper;
         }
-        public ShowReviewsAndRatingsDTO AddReview(AddResponseDTO dto)
+        public ShowReviewsAndRatingsDTO AddReview(int userId, AddResponseDTO dto)
         {
             var review = _mapper.Map<ReviewsAndRatings>(dto);
+
+            review.UserId = userId;
+            review.CreatedAt = DateTime.UtcNow;
+
             _ReviewsAndRatingsRepository.Add(review);
+
             return _mapper.Map<ShowReviewsAndRatingsDTO>(review);
         }
-        public ShowReviewsAndRatingsDTO UpdateReview(int id, UpdateRatingDTO dto)
+        public ShowReviewsAndRatingsDTO? UpdateReview(int id, UpdateRatingDTO dto, int userId)
         {
-            var existingReview = _ReviewsAndRatingsRepository.GetById(id);
+            var existingReview =
+                _ReviewsAndRatingsRepository.GetOwned(id, userId);
+
             if (existingReview == null)
                 return null;
-            if (existingReview.Rating != dto.Rating)
-            {
-                existingReview.Rating = dto.Rating;
-                _ReviewsAndRatingsRepository.Update(existingReview);
-            }
+
+            existingReview.Rating = dto.Rating;
+
+            _ReviewsAndRatingsRepository.Update(existingReview);
+
             return _mapper.Map<ShowReviewsAndRatingsDTO>(existingReview);
         }
         public List<ShowReviewsAndRatingsDTO> GetAllreviews()

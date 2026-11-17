@@ -21,15 +21,15 @@ namespace DAL.Repositories
         public List<ReviewsAndRatings> GetAll()
         {
             return _context.ReviewsAndRatings
-              .Include(r => r.LessonId)
-              .Include(r => r.UserId)
+              .Include(r => r.Lesson)
+              .Include(r => r.User)
               .ToList();
         }
         public ReviewsAndRatings? GetById(int id)
         {
             return _context.ReviewsAndRatings
-                .Include(r => r.LessonId)
-              .Include(r => r.UserId)
+                .Include(r => r.Lesson)
+              .Include(r => r.User)
               .FirstOrDefault(r => r.ReviewId == id);
         }
         public void Update(ReviewsAndRatings ReviewAndRating)

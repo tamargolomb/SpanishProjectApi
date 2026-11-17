@@ -109,9 +109,12 @@ builder.Services
 
 builder.Services.AddAuthorization();
 
-
+//------images
 var imagesFolder = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, builder.Configuration["ImagesFolder"]));
 Directory.CreateDirectory(imagesFolder);
+//-----files
+var filesFolder = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, builder.Configuration["FilesFolder"]));
+Directory.CreateDirectory(filesFolder);
 
 // Services
 builder.Services.AddControllers(options =>
@@ -144,12 +147,13 @@ builder.Services.AddDataProtection();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddSingleton<IImageService>(new ImageService(imagesFolder));
+builder.Services.AddSingleton<IFileService>(new FileService(filesFolder));
 builder.Services.AddScoped<IReviewAndRatingService, ReviewAndRatingService>();
 builder.Services.AddScoped<ILevelService, LevelService>();
 builder.Services.AddScoped<ILessonService, LessonService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAgentService, AgentService>();
-builder.Services.AddScoped<IEmailService, EmailService>();
+//builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IPasswordHasher<Users>, PasswordHasher<Users>>();
 builder.Services.AddScoped<AssessmentService>();
 

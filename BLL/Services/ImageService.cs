@@ -16,7 +16,7 @@ namespace BLL.Services
 
         public void Delete(string fileName)
         {
-            throw new NotImplementedException();
+         
         }
 
         public string Save(IFormFile file)

@@ -17,10 +17,13 @@ namespace projectApi.Controllers
     public class LessonController : ControllerBase
     {
         private readonly ILessonService _ilessonservice;
+        private readonly IFileService _fileService;
 
-        public LessonController(ILessonService ilessonservice)
+
+        public LessonController(ILessonService ilessonservice,IFileService fileService)
         {
             _ilessonservice = ilessonservice;
+            _fileService = fileService;
         }
 
         [AllowAnonymous]
@@ -50,7 +53,18 @@ namespace projectApi.Controllers
                 return CreatedAtAction(nameof(GetById), new { id = result.LessonId }, result); 
         }
 
+        [HttpGet("{fileName}")]
+        public IActionResult GetFile(string fileName)
+        {
+            var stream = _fileService.GetFileStream(fileName);
+            var contentType = _fileService.GetContentType(fileName);
 
+            return File(
+                stream,
+                contentType,
+                enableRangeProcessing: true
+            );
+        }
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

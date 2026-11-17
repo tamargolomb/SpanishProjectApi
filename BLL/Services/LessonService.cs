@@ -16,35 +16,42 @@ namespace BLL.Services
         private readonly ILessonsRepository _LessonsRepository;
         private readonly IMapper _mapper;
         private readonly IImageService _imageService;
+        private readonly IFileService _fileService;
         private readonly ICategoriesRepository _categoryRepository;
         private readonly ILevelsRepository _levelRepository;
         
-        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService, ICategoriesRepository categoryRepository, ILevelsRepository levelRepository)
+        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService, ICategoriesRepository categoryRepository, ILevelsRepository levelRepository,IFileService fileService)
         {
             _LessonsRepository = lessonsRepository;
             _mapper = mapper;
             _imageService = imageService;
+            _fileService = fileService;
             _categoryRepository = categoryRepository;
             _levelRepository = levelRepository;
         }
         public ShowLessonDTO AddLesson(AddLessonDTO lessonDTO, int userId)
         {
-
             if (!_categoryRepository.Exists(lessonDTO.CategoryId))
                 throw new BusinessRuleException("The selected category does not exist");
 
             if (!_levelRepository.Exists(lessonDTO.LevelId))
                 throw new BusinessRuleException("The selected level does not exist");
+
             var lesson = _mapper.Map<Lesson>(lessonDTO);
             lesson.UserId = userId;
 
-            if (lessonDTO.image != null)
-            {
-                lesson.image = _imageService.Save(lessonDTO.image);
-            }
-            
             try
             {
+                if (lessonDTO.image != null)
+                {
+                    lesson.image = _imageService.Save(lessonDTO.image);
+                }
+
+                if (lessonDTO.File != null)
+                {
+                    lesson.FileUrl = _fileService.Save(lessonDTO.File);
+                }
+
                 _LessonsRepository.Add(lesson);
             }
             catch
@@ -52,12 +59,15 @@ namespace BLL.Services
                 if (lesson.image != null)
                     _imageService.Delete(lesson.image);
 
+                if (lesson.FileUrl != null)
+                    _fileService.Delete(lesson.FileUrl);
+
                 throw;
             }
 
             return _mapper.Map<ShowLessonDTO>(lesson);
         }
-        
+
         public ShowLessonDTO GetLessonById(int id)
         {
             var lesson = _LessonsRepository.GetById(id);

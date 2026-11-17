@@ -26,8 +26,8 @@ namespace DTO.Lesson
         public string ContentType { get; set; } = string.Empty;
 
 
-        [Required(ErrorMessage = "file url is required")]
-        public string? FileUrl { get; set; }
+        [Required(ErrorMessage = "lesson file is required")]
+        public IFormFile File { get; set; }
 
 
         [Range(1, int.MaxValue, ErrorMessage = "Please select a category")]

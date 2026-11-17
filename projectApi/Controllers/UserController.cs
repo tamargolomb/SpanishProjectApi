@@ -25,26 +25,75 @@ namespace projectApi.Controllers
 
         [AllowAnonymous]
         [HttpPost("register")]
-
-        public ActionResult<AuthResponseDto> Register(
-           [FromBody] AddUserDTO dto)
+        public async Task<IActionResult> Register([FromBody] AddUserDTO dto)
         {
-            var result = _userService.Register(dto);
-
-            if (!result)
+            try
             {
-                return Conflict(new
+                // קריאה לפונקציית ההרשמה האסינכרונית
+                await _userService.Register(dto);
+
+                // אם הגענו לכאן, סימן שהכל הצליח והמייל נשלח בהצלחה
+                return Ok(new
                 {
-                    message = "An account with this email already exists."
+                    message = "Registration successful. Please check your email for the verification code."
                 });
             }
-
-            return Ok(new
+            catch (InvalidOperationException ex)
             {
-                message = "Registration successful. Please verify your email."
-            });
+                // תפיסת שגיאות צפויות (כמו אימייל שכבר קיים במערכת)
+                return Conflict(new
+                {
+                    message = ex.Message
+                });
+            }
+            catch (Exception ex)
+            {
+                // תפיסת שגיאות לא צפויות (כמו כשל בשליחת המייל)
+                return StatusCode(500, new
+                {
+                    message = "An error occurred during registration. Please try again later.",
+                    details = ex.Message
+                });
+            }
         }
 
+        [AllowAnonymous]
+        [HttpPost("verify-code")]
+        public ActionResult<AuthResponseDto> VerifyCode([FromBody] VerifyCodeDTO dto)
+        {
+            try
+            {
+                var authResponse = _userService.VerifyCodeAndLogin(dto);
+
+                if (authResponse == null)
+                {
+                    return BadRequest(new
+                    {
+                        message = "Invalid or expired verification code."
+                    });
+                }
+
+                // מחזיר את הטוקן והפרטים לריאקט בהצלחה!
+                return Ok(authResponse);
+            }
+            catch (InvalidOperationException ex)
+            {
+                // תפיסת שגיאות לוגיות (כמו קוד שגוי או פג תוקף)
+                return BadRequest(new
+                {
+                    message = ex.Message
+                });
+            }
+            catch (Exception ex)
+            {
+                // שגיאות מערכת לא צפויות
+                return StatusCode(500, new
+                {
+                    message = "An error occurred while verifying the code.",
+                    details = ex.Message
+                });
+            }
+        }
 
         [AllowAnonymous]
         [HttpPost("login")]

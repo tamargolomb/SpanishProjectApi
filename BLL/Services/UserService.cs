@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BLL.Exceptions;
 using DAL;
 using DAL.Repositories;
 using DTO;
@@ -7,6 +8,7 @@ using DTO.User;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace BLL.Services
@@ -17,22 +19,46 @@ namespace BLL.Services
         private readonly ITokenService _tokens;
         private readonly IPasswordHasher<Users> _hasher;
         private readonly IMapper _mapper;
-        public UserService(IUsersRepository userRepository, IMapper mapper,ITokenService tokens, IPasswordHasher<Users> hasher)
+        private readonly EmailService _emailService;
+
+        public UserService(IUsersRepository userRepository, IMapper mapper,ITokenService tokens, IPasswordHasher<Users> hasher, EmailService emailService)
         {
             _UsersRepository = userRepository;
             _mapper = mapper;
             _tokens = tokens;
             _hasher = hasher;
+            _emailService = emailService;
+        }
+        //----- יצירת טוקן אקראי
+        private string GenerateToken()
+        {
+            return Convert.ToHexString(
+                RandomNumberGenerator.GetBytes(32));
         }
 
-        public bool Register(AddUserDTO dto)
+        // -----שמירת Hash של הטוקן
+        private string HashToken(string token)
+        {
+            var bytes = SHA256.HashData(
+                Encoding.UTF8.GetBytes(token));
+
+            return Convert.ToHexString(bytes);
+        }
+
+
+
+
+        public async Task<bool> Register(AddUserDTO dto)
         {
             var email = dto.UserEmail.Trim().ToLowerInvariant();
 
+            // 1. בדיקה שהמייל לא תפוס
             if (_UsersRepository.EmailExists(email))
-                return false;
-          
+            {
+                throw new InvalidOperationException("כתובת האימייל כבר רשומה במערכת.");
+            }
 
+            // 2. יצירת אובייקט המשתמש עם כל הפרטים שהזין
             var user = new Users
             {
                 UserName = dto.UserName.Trim(),
@@ -40,20 +66,68 @@ namespace BLL.Services
                 Role = "User",
                 JoinDate = DateTime.UtcNow,
                 Score = 0,
-                LevelId = null
+                IsEmailVerified = false
             };
 
-            user.UserPassword =
-                _hasher.HashPassword(user, dto.UserPassword);
+            // הצפנת הסיסמה 
+            user.UserPassword = _hasher.HashPassword(user, dto.UserPassword);
 
+            //  יצירת קוד אימות בן 6 ספרות ותוקף ל-10 דקות
+            string code = new Random().Next(100000, 999999).ToString();
+            user.VerificationCode = code;
+            user.VerificationCodeExpiresAt = DateTime.UtcNow.AddMinutes(10);
+
+            //  שמירה במסד הנתונים
             _UsersRepository.Add(user);
 
-            return true;//?
+            // שליחת הקוד למייל
+            bool isEmailSent = await _emailService.SendEmailAsync(
+                email,
+                "Spanish Learning - Verify your email",
+                $"Your verification code is: <b>{code}</b>"
+            );
 
-           // return _tokens.CreateToken(user);
+            if (!isEmailSent)
+            {
+                throw new Exception("שליחת מייל האימות נכשלה.");
+            }
+
+            return true; // ההרשמה נקלטה, כעת יש לעבור למסך הזנת הקוד
         }
 
 
+
+
+        //----אחרי הזנת הקוד החד פעמי
+        public AuthResponseDto VerifyCodeAndLogin(VerifyCodeDTO dto)
+        {
+            string email = dto.UserEmail.Trim().ToLowerInvariant();
+            var user = _UsersRepository.GetByEmail(email);
+
+            if (user == null)
+                throw new InvalidOperationException("המשתמש לא נמצא");
+
+            // בדיקת תוקף והשוואת הקוד
+            if ( user.VerificationCodeExpiresAt < DateTime.UtcNow)
+            {
+                throw new InvalidOperationException("פג תוקפו של הקוד. יש לבקש קוד חדש.");
+            }
+
+            if (user.VerificationCode != dto.Code.Trim())
+            {
+                throw new InvalidOperationException("קוד האימות שגוי.");
+            }
+
+            // הקוד תקין! מעדכנים שהמייל מאומת ומאפסים את הקוד
+            user.IsEmailVerified = true;
+            user.VerificationCode = null;
+            user.VerificationCodeExpiresAt = null;
+
+            _UsersRepository.Update(user);
+
+            // מחזירים את הטוקן כך שהמשתמש נכנס מיד לאתר!
+            return _tokens.CreateToken(user);
+        }
         public AuthResponseDto? Login(LoginUserDTO dto)
         {
             var email = dto.UserEmail.Trim().ToLowerInvariant();

@@ -17,31 +17,40 @@ namespace BLL.Services
             _configuration = configuration;
         }
 
-        public async Task SendEmailAsync(string toEmail, string subject, string body)
+        public async Task<bool> SendEmailAsync(string toEmail, string subject, string body)
         {
-            var senderEmail = _configuration["Email:SenderEmail"];
-            var username = _configuration["Email:Username"];
-            var password = _configuration["Email:Password"];
-
-            var email = new MimeMessage();
-            email.From.Add(new MailboxAddress("Spanish Learning Team", senderEmail!));
-            email.To.Add(MailboxAddress.Parse(toEmail));
-            email.Subject = subject;
-            email.Body = new TextPart("plain")
+            try
             {
-                Text = body
-            };
+                var senderEmail = _configuration["Email:SenderEmail"];
+                var username = _configuration["Email:Username"];
+                var password = _configuration["Email:Password"];
 
-            // שימוש בשם המלא של הלקוח כדי למנוע התנגשות
-            using var smtp = new MailKit.Net.Smtp.SmtpClient();
+                var email = new MimeMessage();
+                email.From.Add(new MailboxAddress("Spanish Learning Team", senderEmail!));
+                email.To.Add(MailboxAddress.Parse(toEmail));
+                email.Subject = subject;
+                email.Body = new TextPart("plain")
+                {
+                    Text = body
+                };
 
-            await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-            await smtp.AuthenticateAsync(username!, password!);
+                // שימוש בשם המלא של הלקוח כדי למנוע התנגשות
+                using var smtp = new MailKit.Net.Smtp.SmtpClient();
 
-            // שליחת ההודעה
-            await smtp.SendAsync(email);
+                await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+                await smtp.AuthenticateAsync(username!, password!);
 
-            await smtp.DisconnectAsync(true);
+                // שליחת ההודעה
+                await smtp.SendAsync(email);
+
+                await smtp.DisconnectAsync(true);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+          
         }
     }
 }

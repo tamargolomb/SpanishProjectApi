@@ -25,16 +25,20 @@ namespace BLL.Services
         public ShowLevelDTO AddLevel(AddLevelDTO dto)
         {
             var level = _mapper.Map<Levels>(dto);
+
             _LevelsRepository.Add(level);
+
             return _mapper.Map<ShowLevelDTO>(level);
         }
-        public ShowLevelDTO UpdateLevel(int id, ShowLevelDTO dto)
+        public ShowLevelDTO? UpdateLevel(int id, UpdateLevelDTO dto)
         {
             var existingLevel = _LevelsRepository.GetById(id);
+
             if (existingLevel == null)
                 return null;
 
             _mapper.Map(dto, existingLevel);
+
             _LevelsRepository.Update(existingLevel);
 
             return _mapper.Map<ShowLevelDTO>(existingLevel);
@@ -49,7 +53,8 @@ namespace BLL.Services
             var level = _LevelsRepository.GetById(id);
 
             if (level == null)
-                throw new NotFoundException($"level with id {id} was not found");
+                throw new NotFoundException(
+                    $"Level with id {id} was not found");
 
             return _mapper.Map<ShowLevelDTO>(level);
         }

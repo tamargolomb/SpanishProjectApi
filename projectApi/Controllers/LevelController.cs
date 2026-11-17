@@ -24,18 +24,14 @@ namespace projectApi.Controllers
         }
 
 
-        [AllowAnonymous]
+       
 
         [HttpGet]
         public ActionResult<List<ShowLevelDTO>> GetAll()
         {
-            return _ilevelservice.GetAllLevels();
+            return Ok(_ilevelservice.GetAllLevels());
         }
 
-        //public ActionResult<ShowLevelDTO> GetById(int id)
-        //{
-        //    return Ok(_ilevelservice.GetLevelById(id));
-        //}
 
         [HttpGet("{id}")]
         public ActionResult<ShowLevelDTO> GetById(int id)
@@ -44,22 +40,26 @@ namespace projectApi.Controllers
         }
 
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Add([FromBody] AddLevelDTO dto)
         {
-            return Ok(_ilevelservice.AddLevel(dto));
+            var level = _ilevelservice.AddLevel(dto);
+            return CreatedAtAction(nameof(GetById),
+                new { id = level.LevelId }, level);
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] ShowLevelDTO dto)
+        [Authorize(Roles = "Admin")]
+        [HttpPut("{id:int}")]
+        public IActionResult Update(int id, [FromBody] UpdateLevelDTO dto)
         {
             var updatedLevel = _ilevelservice.UpdateLevel(id, dto);
+
             if (updatedLevel == null)
                 return NotFound();
 
             return Ok(updatedLevel);
         }
-
         //// GET: api/Level
         //[HttpGet]
         //public async Task<ActionResult<List<ShowLevelDTO>>> GetLevels()

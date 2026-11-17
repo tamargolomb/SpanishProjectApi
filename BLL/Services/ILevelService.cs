@@ -11,7 +11,7 @@ namespace BLL.Services
     public interface ILevelService
     {
         ShowLevelDTO AddLevel(AddLevelDTO dto);
-        ShowLevelDTO UpdateLevel(int id, ShowLevelDTO dto);
+        ShowLevelDTO? UpdateLevel(int id, UpdateLevelDTO dto);
         List<ShowLevelDTO> GetAllLevels();
         ShowLevelDTO GetLevelById(int id);
     }

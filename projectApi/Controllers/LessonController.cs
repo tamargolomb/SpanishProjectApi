@@ -45,17 +45,9 @@ namespace projectApi.Controllers
 
         [HttpPost]
         public IActionResult Add([FromForm] AddLessonDTO dto)
-        {
-            try
-            {
+        {        
                 var result = _ilessonservice.AddLesson(dto, User.GetUserId());
-                return CreatedAtAction(nameof(GetById), new { id = result.LessonId }, result);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-           
+                return CreatedAtAction(nameof(GetById), new { id = result.LessonId }, result); 
         }
 
 
@@ -68,13 +60,12 @@ namespace projectApi.Controllers
             return NoContent();
         }
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromForm] ShowLessonDTO dto)
+        public IActionResult Update(int id)
         {
-            var updatedLesson = _ilessonservice.UpdateLesson(id, dto);
-            if (updatedLesson == null)
+            if (!_ilessonservice.UpdateLesson(id))
                 return NotFound();
 
-            return Ok(updatedLesson);
+            return NoContent();
         }
     }
 }

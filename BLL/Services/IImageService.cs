@@ -9,5 +9,6 @@ namespace BLL.Services
     {
         string Save(IFormFile file);
         void Delete(string fileName);
+        Stream GetImageStream(string fileName);
     }
 }

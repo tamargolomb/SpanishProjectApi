@@ -18,12 +18,13 @@ namespace projectApi.Controllers
     {
         private readonly ILessonService _ilessonservice;
         private readonly IFileService _fileService;
+        private readonly IImageService _imageService;
 
-
-        public LessonController(ILessonService ilessonservice,IFileService fileService)
+        public LessonController(ILessonService ilessonservice,IFileService fileService, IImageService imageService)
         {
             _ilessonservice = ilessonservice;
             _fileService = fileService;
+            _imageService = imageService;
         }
 
         [Authorize()]
@@ -73,6 +74,36 @@ namespace projectApi.Controllers
                 enableRangeProcessing: true
             );
         }
+
+        [HttpGet("images/{fileName}")]
+        public IActionResult GetImage(string fileName)
+        {
+            try
+            {
+                var stream = _imageService.GetImageStream(fileName);
+
+                var extension = Path.GetExtension(fileName).ToLowerInvariant();
+
+                var contentType = extension switch
+                {
+                    ".jpg" or ".jpeg" => "image/jpeg",
+                    ".png" => "image/png",
+                    ".webp" => "image/webp",
+                    _ => "application/octet-stream"
+                };
+
+                return File(stream, contentType);
+            }
+            catch (FileNotFoundException)
+            {
+                return NotFound("Image not found");
+            }
+            catch (ArgumentException)
+            {
+                return BadRequest("Invalid image name");
+            }
+        }
+
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

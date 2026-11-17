@@ -45,5 +45,34 @@ namespace BLL.Services
             return fileName;   // מחזירים רק את השם
         }
 
+        public Stream GetImageStream(string fileName)
+        {
+            if (string.IsNullOrWhiteSpace(fileName) ||
+                fileName != Path.GetFileName(fileName))
+                throw new ArgumentException("Invalid image name");
+
+            var extension = Path.GetExtension(fileName).ToLowerInvariant();
+
+            var allowedExtensions = new[] {
+        ".jpg", ".jpeg", ".png", ".webp"
+    };
+
+            if (!allowedExtensions.Contains(extension))
+                throw new ArgumentException("Invalid image type");
+
+            var imagePath = Path.Combine(_folder, fileName);
+
+            if (!File.Exists(imagePath))
+                throw new FileNotFoundException("Image not found");
+
+            return new FileStream(
+                imagePath,
+                FileMode.Open,
+                FileAccess.Read,
+                FileShare.Read
+            );
+        }
+
+
     }
 }

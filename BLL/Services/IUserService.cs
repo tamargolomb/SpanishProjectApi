@@ -9,11 +9,11 @@ using System.Text;
 namespace BLL.Services
 {
     public interface IUserService
-    {
-        //ShowUserDTO GetUserById(int id);
-        AuthResponseDto? Register(AddUserDTO dto);
+    {  
+        bool Register(AddUserDTO dto);
         AuthResponseDto? Login(LoginUserDTO dto);
         List<ShowUserDTO> GetAllUsers();
+        ShowUserDTO GetByUserId(int id);
         ShowUserDTO UpdateUser(int id, UpdateUserDTO dto);
         bool DeleteUser(int id);
     }

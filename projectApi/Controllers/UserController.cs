@@ -22,7 +22,7 @@ namespace projectApi.Controllers
             _userService = iuserService;
         }
 
-
+        [AllowAnonymous]
         [HttpPost("register")]
 
         public ActionResult<AuthResponseDto> Register(
@@ -30,7 +30,7 @@ namespace projectApi.Controllers
         {
             var result = _userService.Register(dto);
 
-            if (result is null)
+            if (!result)
             {
                 return Conflict(new
                 {
@@ -38,13 +38,16 @@ namespace projectApi.Controllers
                 });
             }
 
-            return Ok(result);
+            return Ok(new
+            {
+                message = "Registration successful. Please verify your email."
+            });
         }
 
 
-
+        [AllowAnonymous]
         [HttpPost("login")]
-        public ActionResult<AuthResponseDto> Login(LoginUserDTO dto)
+        public ActionResult<AuthResponseDto> Login([FromBody] LoginUserDTO dto)
         {
             var result = _userService.Login(dto);
             if (result is null)
@@ -61,7 +64,7 @@ namespace projectApi.Controllers
             return Ok(users);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
@@ -76,19 +79,33 @@ namespace projectApi.Controllers
         public IActionResult Update(int id, [FromBody] UpdateUserDTO dto)
         {
             var updatedLesson = _userService.UpdateUser(id, dto);
-            if (updatedLesson == null)
-                return NotFound();
+            try
+            {
+                var updatedUser =
+                    _userService.UpdateUser(id, dto);
 
-            return Ok(updatedLesson);
+                if (updatedUser == null)
+                    return NotFound();
+
+                return Ok(updatedUser);
+            }
+            catch (InvalidOperationException)
+            {
+                return Conflict(new
+                {
+                    message = "An account with this email already exists."
+                });
+            }
         }
 
-        //[HttpGet("{id}")]
-        //[Authorize(Roles = "Admin")]
-        //public ActionResult<ShowUserDTO> GetUserById(int id)
-        //{
-        //    var user = _userService.GetUserById(id);
-        //    return Ok(user);
-        //}
+
+        [HttpGet("{id}")]
+        [Authorize(Roles = "Admin")]
+        public ActionResult<ShowUserDTO> GetById(int id)
+        {
+            var user = _userService.GetByUserId(id);
+            return Ok(user);
+        }
 
 
 

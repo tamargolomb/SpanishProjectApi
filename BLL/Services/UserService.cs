@@ -25,19 +25,13 @@ namespace BLL.Services
             _hasher = hasher;
         }
 
-        //public Users? GetById(int id)
-        //{
-        //    return _UsersRepository.GetById(id);
-        //}
-
-
-
-        public AuthResponseDto? Register(AddUserDTO dto)
+        public bool Register(AddUserDTO dto)
         {
             var email = dto.UserEmail.Trim().ToLowerInvariant();
 
             if (_UsersRepository.EmailExists(email))
-                return null;
+                return false;
+          
 
             var user = new Users
             {
@@ -54,7 +48,9 @@ namespace BLL.Services
 
             _UsersRepository.Add(user);
 
-            return _tokens.CreateToken(user);
+            return true;//?
+
+           // return _tokens.CreateToken(user);
         }
 
 
@@ -76,25 +72,36 @@ namespace BLL.Services
             var users = _UsersRepository.GetAll();
             return _mapper.Map<List<ShowUserDTO>>(users);
         }
+        public ShowUserDTO GetByUserId(int id)
+        {
+            var user = _UsersRepository.GetById(id);
+
+            if (user == null)
+                return null;
+
+            return _mapper.Map<ShowUserDTO>(user);
+        }
         public ShowUserDTO UpdateUser(int id, UpdateUserDTO dto)
         {
             var existingUser = _UsersRepository.GetById(id);
             if (existingUser == null)
                 return null;
 
-            _mapper.Map(dto, existingUser);
+            var newEmail = dto.UserEmail.Trim().ToLowerInvariant();
+            bool emailChanged =existingUser.UserEmail != newEmail;
+            if (emailChanged && _UsersRepository.EmailExists(newEmail)) throw new InvalidOperationException("Email already exists.");
+            existingUser.UserName = dto.UserName.Trim();
+            if (emailChanged)
+            {
+                // כתובת המייל השתנתה ולכן צריך אימות מחדש
+            }
             _UsersRepository.Update(existingUser);
 
             return _mapper.Map<ShowUserDTO>(existingUser);
         }
         public bool DeleteUser(int id)
         {
-            var user = _UsersRepository.GetOwned(id);
-            if (user is null)
-                return false;
-
-            _UsersRepository.Delete(id);
-            return true;
+            return _UsersRepository.Delete(id);            
         }
     }
 }

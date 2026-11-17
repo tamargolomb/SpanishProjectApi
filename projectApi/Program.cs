@@ -156,6 +156,8 @@ builder.Services.AddScoped<IAgentService, AgentService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IPasswordHasher<Users>, PasswordHasher<Users>>();
 builder.Services.AddScoped<AssessmentService>();
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped<IAssessmentSessionService, AssessmentSessionService>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

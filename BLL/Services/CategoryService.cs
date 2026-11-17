@@ -31,14 +31,9 @@ namespace BLL.Services
             var categories = _CategoriesRepository.GetAll();
             return _mapper.Map<List<ShowCategoriesDTO>>(categories);
         }
-        public bool DeleteCategory(int Categoryid)
+        public bool DeleteCategory(int categoryId)
         {
-            var category = _CategoriesRepository.GetOwned(Categoryid);
-            if (category is null)
-                return false;
-
-            _CategoriesRepository.Delete(Categoryid);
-            return true;
+            return _CategoriesRepository.Delete(categoryId);
         }
     }
 }

@@ -23,11 +23,10 @@ namespace projectApi.Controllers
             _icategoryservice = icategoryservice;
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public ActionResult<List<ShowCategoriesDTO>> GetAll()
         {
-            return _icategoryservice.GetAllCategories();
+            return Ok(_icategoryservice.GetAllCategories());
         }
 
         [HttpPost]
@@ -36,6 +35,7 @@ namespace projectApi.Controllers
             return Ok(_icategoryservice.AddCategory(dto));
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

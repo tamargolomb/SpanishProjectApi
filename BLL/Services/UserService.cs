@@ -89,8 +89,10 @@ namespace BLL.Services
 
             var newEmail = dto.UserEmail.Trim().ToLowerInvariant();
             bool emailChanged =existingUser.UserEmail != newEmail;
-            if (emailChanged && _UsersRepository.EmailExists(newEmail)) throw new InvalidOperationException("Email already exists.");
-            existingUser.UserName = dto.UserName.Trim();
+            if (emailChanged && _UsersRepository.EmailExists(newEmail)) 
+                throw new InvalidOperationException("Email already exists.");
+
+            _mapper.Map(dto, existingUser);
             if (emailChanged)
             {
                 // כתובת המייל השתנתה ולכן צריך אימות מחדש

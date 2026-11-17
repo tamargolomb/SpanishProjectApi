@@ -88,9 +88,16 @@ namespace BLL.Services
             _LessonsRepository.Update(lesson);
             return true;
         }
-        public List<ShowLessonDTO> GetAllLessons()
+        public List<ShowLessonDTO> GetLessons(int? levelId = null, int? categoryId = null)
         {
             var lessons = _LessonsRepository.GetAll();
+
+            if (levelId.HasValue)
+                lessons = lessons.Where(l => l.LevelId == levelId.Value).ToList();
+
+            if (categoryId.HasValue)
+                lessons = lessons.Where(l => l.CategoryId == categoryId.Value).ToList();
+
             return _mapper.Map<List<ShowLessonDTO>>(lessons);
         }
         public bool DeleteLesson(int id, int userId)

@@ -10,14 +10,38 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
 using OpenAI;
 using projectApi.Filters;
 using System.ClientModel;
 using System.Text;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        Description = "Enter your JWT token"
+    });
+
+    options.AddSecurityRequirement(document =>
+        new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecuritySchemeReference("Bearer", document),
+                new List<string>()
+            }
+        });
+});
+
+
 
 builder.Services.AddCors(options =>
 {
@@ -48,7 +72,7 @@ IChatClient innerClient = new OpenAIClient(
     new ApiKeyCredential(apiKey),
     options
 )
-.GetChatClient("gemini-2.5-flash")
+.GetChatClient("gemini-3.1-flash-lite")
 .AsIChatClient();
 
 
@@ -126,7 +150,7 @@ builder.Services.AddScoped<ILessonService, LessonService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAgentService, AgentService>();
 builder.Services.AddScoped<IPasswordHasher<Users>, PasswordHasher<Users>>();
-
+builder.Services.AddScoped<AssessmentService>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

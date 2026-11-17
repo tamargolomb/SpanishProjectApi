@@ -22,7 +22,7 @@ namespace BLL.Services
             _LevelsRepository = levelsRepository;
             _mapper = mapper;
         }
-        public ShowLevelDTO AddLevel(AddLessonDTO dto)
+        public ShowLevelDTO AddLevel(AddLevelDTO dto)
         {
             var level = _mapper.Map<Levels>(dto);
             _LevelsRepository.Add(level);

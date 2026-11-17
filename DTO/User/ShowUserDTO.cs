@@ -15,7 +15,7 @@ namespace DTO.User
 
         public string UserEmail { get; set; } = string.Empty;
 
-        public int LevelId { get; set; }
+        public int? LevelId { get; set; }
 
         public string? LevelName { get; set; }
 

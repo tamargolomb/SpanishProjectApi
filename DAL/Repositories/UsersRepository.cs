@@ -21,7 +21,7 @@ namespace DAL.Repositories
         public List<Users> GetAll()
         {
             return _context.Users
-              .Include(r => r.LevelId)
+              .Include(r => r.Level)
               .ToList();
         }
 
@@ -32,7 +32,9 @@ namespace DAL.Repositories
 
         public Users? GetById(int id)
         {
-            return _context.Users.Find(id);
+            return _context.Users
+           .Include(u => u.Level)
+           .FirstOrDefault(u => u.UserId == id);
         }
 
         public bool EmailExists(string email)
@@ -54,8 +56,5 @@ namespace DAL.Repositories
             _context.SaveChanges();
             return true;
         }
-
-        public Users? GetOwned(int id) =>
-            _context.Users.FirstOrDefault(r => r.UserId == id );
     }
 }

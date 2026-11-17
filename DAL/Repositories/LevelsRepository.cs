@@ -34,5 +34,10 @@ namespace DAL.Repositories
             return _context.Levels
               .FirstOrDefault(r => r.LevelId == id);
         }
+        public bool Exists(int id)
+        {
+            return _context.Levels.Any(level => level.LevelId == id);
+        }
     }
+
 }

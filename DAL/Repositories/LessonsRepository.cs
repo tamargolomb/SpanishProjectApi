@@ -21,17 +21,17 @@ namespace DAL.Repositories
         public List<Lesson> GetAll()
         {
             return _context.Lessons
-              .Include(r => r.CategoryId)
-              .Include(r => r.LevelId)
-              .Include(r => r.UserId)
+              .Include(r => r.Category)
+              .Include(r => r.Level)
+              .Include(r => r.user)
               .ToList();
         }
         public Lesson? GetById(int id)
         {
             return _context.Lessons
-              .Include(r => r.CategoryId)
-              .Include(r => r.LevelId)
-              .Include(r => r.UserId)
+              .Include(r => r.Category)
+              .Include(r => r.Level)
+              .Include(r => r.user)
               .FirstOrDefault(r => r.LessonId == id);
         }
         public void Update(Lesson Lesson)

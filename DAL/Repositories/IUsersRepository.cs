@@ -14,8 +14,5 @@ namespace DAL.Repositories
         bool EmailExists(string email);
         void Update(Users User);
         bool Delete(int id);
-        Users? GetOwned(int id);
-
-
     }
 }

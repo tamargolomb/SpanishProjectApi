@@ -33,7 +33,7 @@ namespace DTO.Lesson
         [Range(1, int.MaxValue, ErrorMessage = "Please select a category")]
         public int CategoryId { get; set; }
 
-        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a level")]
         public int LevelId { get; set; }
 
         public int UserId {  get; set; }

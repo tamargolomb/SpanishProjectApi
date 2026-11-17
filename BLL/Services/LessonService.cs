@@ -17,12 +17,15 @@ namespace BLL.Services
         private readonly IMapper _mapper;
         private readonly IImageService _imageService;
         private readonly ICategoriesRepository _categoryRepository;
-        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService, ICategoriesRepository categoryRepository)
+        private readonly ILevelsRepository _levelRepository;
+        
+        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService, ICategoriesRepository categoryRepository, ILevelsRepository levelRepository)
         {
             _LessonsRepository = lessonsRepository;
             _mapper = mapper;
             _imageService = imageService;
             _categoryRepository = categoryRepository;
+            _levelRepository = levelRepository;
         }
         public ShowLessonDTO AddLesson(AddLessonDTO lessonDTO, int userId)
         {
@@ -30,6 +33,8 @@ namespace BLL.Services
             if (!_categoryRepository.Exists(lessonDTO.CategoryId))
                 throw new BusinessRuleException("The selected category does not exist");
 
+            if (!_levelRepository.Exists(lessonDTO.LevelId))
+                throw new BusinessRuleException("The selected level does not exist");
             var lesson = _mapper.Map<Lesson>(lessonDTO);
             lesson.UserId = userId;
 
@@ -62,16 +67,16 @@ namespace BLL.Services
 
             return _mapper.Map<ShowLessonDTO>(lesson);
         }
-        public ShowLessonDTO UpdateLesson(int id, ShowLessonDTO dto)
+        public bool UpdateLesson(int id)
         {
-            var existingLesson = _LessonsRepository.GetById(id);
-            if (existingLesson == null)
-                return null;
+            var lesson = _LessonsRepository.GetById(id);
+            if (lesson == null)
+                return false;
 
-            _mapper.Map(dto, existingLesson);
-            _LessonsRepository.Update(existingLesson);
+            lesson.ViewCount++;
 
-            return _mapper.Map<ShowLessonDTO>(existingLesson);
+            _LessonsRepository.Update(lesson);
+            return true;
         }
         public List<ShowLessonDTO> GetAllLessons()
         {

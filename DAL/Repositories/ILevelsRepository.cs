@@ -11,6 +11,7 @@ namespace DAL.Repositories
         List<Levels> GetAll();
         void Update(Levels Level);
         Levels? GetById(int id);
+        bool Exists(int id);
 
     }
 }

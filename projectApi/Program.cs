@@ -125,6 +125,7 @@ builder.Services.AddScoped<ILevelService, LevelService>();
 builder.Services.AddScoped<ILessonService, LessonService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAgentService, AgentService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IPasswordHasher<Users>, PasswordHasher<Users>>();
 
 

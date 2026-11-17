@@ -26,25 +26,33 @@ namespace projectApi.Controllers
             _fileService = fileService;
         }
 
-        [AllowAnonymous]
+        [Authorize()]
         [HttpGet]
         public ActionResult<List<ShowLessonDTO>> GetAll()
         {
-            return _ilessonservice.GetAllLessons();
+            return _ilessonservice.GetLessons();
         }
 
-        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult GetLessons([FromQuery] int? levelId,[FromQuery] int? categoryId)
+        {
+            var lessons = _ilessonservice.GetLessons(levelId, categoryId);
+
+            return Ok(lessons);
+        }
+
+
         [HttpGet("{id:int}")]
         public ActionResult<ShowLessonDTO> GetById(int id)
         {
             return Ok(_ilessonservice.GetLessonById(id));
         }
 
-        //[HttpGet("mine")]
-        //public ActionResult<List<ShowLessonDTO>> GetMine()
-        //{
-        //    return Ok(_ilessonservice.GetMine(User.GetUserId()));
-        //}
+        [HttpGet("mine")]
+        public ActionResult<List<ShowLessonDTO>> GetMine()
+        {
+            return Ok(_ilessonservice.GetMine(User.GetUserId()));
+        }
 
         [HttpPost]
         public IActionResult Add([FromForm] AddLessonDTO dto)

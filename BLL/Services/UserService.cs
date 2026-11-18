@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace BLL.Services
 {
@@ -24,14 +25,15 @@ namespace BLL.Services
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
         private readonly IHostEnvironment _environment;
-
+        private readonly IMemoryCache _cache;
         public UserService(
             IUsersRepository userRepository,
             IMapper mapper,
             ITokenService tokens,
             IPasswordHasher<Users> hasher,
             IEmailService emailService,
-            IHostEnvironment environment)
+            IHostEnvironment environment,
+            IMemoryCache cache)
         {
             _UsersRepository = userRepository;
             _mapper = mapper;
@@ -39,6 +41,7 @@ namespace BLL.Services
             _hasher = hasher;
             _emailService = emailService;
             _environment = environment;
+            _cache = cache;
         }
 
         private string GenerateToken()
@@ -274,22 +277,32 @@ namespace BLL.Services
                 ct);
         }
         // בקשת שחזור סיסמה (שליחת קוד בן 6 ספרות)
+
+
         public async Task ForgotPassword(ForgotPasswordDTO dto)
         {
-            var email=dto.UserEmail.Trim().ToLowerInvariant();
+            var email = dto.UserEmail.Trim().ToLowerInvariant();
+            var cacheKey = $"password-reset:{email}";
+
+            if (_cache.TryGetValue(cacheKey, out _))
+                return;
 
             var user = _UsersRepository.GetByEmail(email);
 
             if (user == null)
                 return;
 
-            // יצירת קוד בן שש ספרות -
-            string code = RandomNumberGenerator.GetInt32(100000, 1000000).ToString();
+            string code = RandomNumberGenerator
+                .GetInt32(100000, 1000000)
+                .ToString();
 
-            user.VerificationCode = code;
-            user.VerificationCodeExpiresAt = DateTime.UtcNow.AddMinutes(10);
+            user.PasswordResetCodeHash = HashToken(code);
+            user.PasswordResetCodeExpiresAt = DateTime.UtcNow.AddMinutes(10);
+            user.PasswordResetAttempts = 0;
 
             _UsersRepository.Update(user);
+
+            _cache.Set(cacheKey, true, TimeSpan.FromSeconds(60));
 
             if (_environment.IsDevelopment())
             {
@@ -306,47 +319,62 @@ namespace BLL.Services
                 );
 
                 if (!isEmailSent)
-                {
-                    throw new Exception(
-                        "שליחת מייל שחזור הסיסמה נכשלה.");
-                }
+                    throw new Exception("שליחת מייל שחזור הסיסמה נכשלה.");
             }
         }
 
+
+
         // איפוס סיסמה באמצעות הקוד
+
         public bool ResetPassword(ResetPasswordDTO dto)
         {
             var email = dto.UserEmail.Trim().ToLowerInvariant();
-
             var user = _UsersRepository.GetByEmail(email);
 
             if (user == null)
-                throw new InvalidOperationException(
-                    "המשתמש לא נמצא");
+                return false;
 
-            if (user.VerificationCodeExpiresAt == null ||
-                user.VerificationCodeExpiresAt < DateTime.UtcNow)
+            if (user.PasswordResetCodeHash == null ||
+                user.PasswordResetCodeExpiresAt == null ||
+                user.PasswordResetCodeExpiresAt <= DateTime.UtcNow ||
+                user.PasswordResetAttempts >= 5)
             {
-                throw new InvalidOperationException(
-                    "פג תוקפו של הקוד. יש לבקש קוד חדש.");
+                return false;
             }
 
-            if (user.VerificationCode != dto.Code.Trim())
+            string enteredCodeHash = HashToken(dto.Code.Trim());
+
+            bool isValid = CryptographicOperations.FixedTimeEquals(
+                Convert.FromHexString(user.PasswordResetCodeHash),
+                Convert.FromHexString(enteredCodeHash)
+            );
+
+            if (!isValid)
             {
-                throw new InvalidOperationException(
-                    "קוד האימות שגוי.");
+                user.PasswordResetAttempts++;
+
+                if (user.PasswordResetAttempts >= 5)
+                {
+                    user.PasswordResetCodeHash = null;
+                    user.PasswordResetCodeExpiresAt = null;
+                }
+
+                _UsersRepository.Update(user);
+                return false;
             }
 
-            // הצפנת הסיסמה החדשה
-            user.UserPassword = _hasher.HashPassword(user, dto.NewPassword);
+            user.UserPassword =
+                _hasher.HashPassword(user, dto.NewPassword);
 
-            // ניקוי הקוד כדי שיהיה חד-פעמי
-            user.VerificationCode = null;
-            user.VerificationCodeExpiresAt = null;
+            user.PasswordResetCodeHash = null;
+            user.PasswordResetCodeExpiresAt = null;
+            user.PasswordResetAttempts = 0;
 
             _UsersRepository.Update(user);
 
             return true;
         }
+
     }
 }

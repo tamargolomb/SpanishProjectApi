@@ -12,12 +12,10 @@ namespace DTO.User
         public string UserEmail { get; set; } = string.Empty;
 
         [Required]
-        public string Token { get; set; } = string.Empty;
+        public string Code { get; set; } = string.Empty;
 
         [Required]
-        [StringLength(100, MinimumLength = 8)] 
+        [StringLength(100, MinimumLength = 8)]
         public string NewPassword { get; set; } = string.Empty;
-        [Required]
-        public string Code { get; set; }
     }
 }

@@ -19,6 +19,9 @@ namespace DAL
         public bool IsEmailVerified { get; set; }
         public string? VerificationCode { get; set; }
         public DateTime? VerificationCodeExpiresAt {  get; set; }
+        public string? PasswordResetCodeHash { get; set; }
+        public DateTime? PasswordResetCodeExpiresAt { get; set; }
+        public int PasswordResetAttempts { get; set; } = 0;
         public Levels? Level {  get; set; }
         public  List<Lesson> Lessons { get; set; } = new();
         public  List<ReviewsAndRatings> ReviewsAndRatings { get; set; }

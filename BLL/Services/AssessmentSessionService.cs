@@ -122,27 +122,40 @@ namespace BLL.Services
 
                 var currentQuestion = session.CurrentQuestion;
 
-                if (request.SelectedAnswerIndex < 0 ||
+
+                const int UnknownAnswerIndex = -1;
+
+                var isUnknown =
+                    request.SelectedAnswerIndex == UnknownAnswerIndex;
+
+                if (request.SelectedAnswerIndex < UnknownAnswerIndex ||
                     request.SelectedAnswerIndex >= currentQuestion.Options.Count)
                 {
                     throw new ArgumentException(
                         "Invalid answer index.");
                 }
 
+
+
                 var isCorrect =
+                    !isUnknown &&
                     request.SelectedAnswerIndex ==
                     currentQuestion.CorrectAnswerIndex;
+
+
 
                 var answer = new AssessmentAnswerHistoryDto
                 {
                     Question = currentQuestion.Question,
                     LevelName = currentQuestion.Level,
-                    SelectedAnswer = currentQuestion.Options[
-                        request.SelectedAnswerIndex],
+                    SelectedAnswer = isUnknown
+                        ? "I don't know"
+                        : currentQuestion.Options[request.SelectedAnswerIndex],
                     CorrectAnswer = currentQuestion.Options[
                         currentQuestion.CorrectAnswerIndex],
                     IsCorrect = isCorrect
                 };
+
 
                 var updatedHistory =
                     new List<AssessmentAnswerHistoryDto>(
@@ -221,10 +234,13 @@ namespace BLL.Services
                 var nextLevel = levels.First(
                     l => l.LevelId == nextLevelId);
 
+
                 var nextQuestion =
                     await _assessmentService.GenerateQuestionAsync(
                         nextLevel.LevelName,
-                        ct);
+                        ct,
+                        updatedHistory.Select(h => h.Question));
+
 
                 session.AnswerHistory = updatedHistory;
                 session.QuestionsAnswered = newQuestionsAnswered;

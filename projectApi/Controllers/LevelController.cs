@@ -23,9 +23,6 @@ namespace projectApi.Controllers
             _ilevelservice = ilevelservice;
         }
 
-
-       
-
         [HttpGet]
         public ActionResult<List<ShowLevelDTO>> GetAll()
         {

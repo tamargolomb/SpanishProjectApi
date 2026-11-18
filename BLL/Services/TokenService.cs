@@ -28,7 +28,7 @@ namespace BLL.Services
         {
             new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
             new Claim(ClaimTypes.Email, user.UserEmail),
-            //new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Role, user.Role)
         };
 
             var minutes = int.Parse(_config["Jwt:ExpiresMinutes"] ?? "60");

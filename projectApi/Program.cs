@@ -14,6 +14,7 @@ using Microsoft.OpenApi;
 using OpenAI;
 using projectApi.Filters;
 using System.ClientModel;
+using System.Security.Claims;
 using System.Text;
 
 
@@ -104,8 +105,11 @@ builder.Services
             ClockSkew = TimeSpan.Zero,
 
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+
+            RoleClaimType = ClaimTypes.Role
         };
+
     });
 
 builder.Services.AddAuthorization();

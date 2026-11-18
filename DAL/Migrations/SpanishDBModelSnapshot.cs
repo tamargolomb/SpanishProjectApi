@@ -171,6 +171,15 @@ namespace DAL.Migrations
                     b.Property<int?>("LevelId")
                         .HasColumnType("int");
 
+                    b.Property<int>("PasswordResetAttempts")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("PasswordResetCodeExpiresAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PasswordResetCodeHash")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

@@ -175,7 +175,7 @@ namespace projectApi.Controllers
             return Ok(user);
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO dto)
         {
@@ -184,7 +184,7 @@ namespace projectApi.Controllers
             return Ok(new { message = "אם האימייל קיים במערכת, נשלח אליו קוד שחזור." });
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpPost("reset-password")]
         public IActionResult ResetPassword([FromBody] ResetPasswordDTO dto)
         {

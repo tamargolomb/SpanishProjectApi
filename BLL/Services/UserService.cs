@@ -133,7 +133,7 @@ namespace BLL.Services
                 throw new InvalidOperationException(
                     "המשתמש לא נמצא");
 
-            if (user.VerificationCodeExpiresAt <
+            if (user.VerificationCodeExpiresAt == null || user.VerificationCodeExpiresAt <
                 DateTime.UtcNow)
             {
                 throw new InvalidOperationException(
@@ -194,7 +194,7 @@ namespace BLL.Services
             return _mapper.Map<ShowUserDTO>(user);
         }
 
-        public ShowUserDTO UpdateUser(int id, UpdateUserDTO dto)
+        public async Task<ShowUserDTO?> UpdateUser(int id, UpdateUserDTO dto)
         {
             var existingUser = _UsersRepository.GetById(id);
 
@@ -203,28 +203,61 @@ namespace BLL.Services
 
             var newEmail = dto.UserEmail.Trim().ToLowerInvariant();
 
-            bool emailChanged =
-                existingUser.UserEmail != newEmail;
+            bool emailChanged = existingUser.UserEmail != newEmail;
 
-            if (emailChanged &&
-                _UsersRepository.EmailExists(newEmail))
+            if (emailChanged && _UsersRepository.EmailExists(newEmail))
             {
                 throw new InvalidOperationException(
-                    "Email already exists.");
+                    "כתובת האימייל כבר רשומה במערכת.");
             }
 
-            _mapper.Map(dto, existingUser);
+            existingUser.UserName = dto.UserName.Trim();
 
             if (emailChanged)
             {
-                // כתובת המייל השתנתה ונדרש אימות מחדש
+                existingUser.UserEmail = newEmail;
+
+                // כתובת המייל השתנתה ולכן צריך אימות מחדש
+                existingUser.IsEmailVerified = false;
+
+                // יצירת קוד אימות חדש בן 6 ספרות (בדיוק כמו ב-Register)
+                string code = RandomNumberGenerator
+                    .GetInt32(100000, 1000000)
+                    .ToString();
+
+                existingUser.VerificationCode = code;
+                existingUser.VerificationCodeExpiresAt = DateTime.UtcNow.AddMinutes(10);
+
+                // שליחת קוד האימות (בדומה ללוגיקה ב-Register)
+                if (_environment.IsDevelopment())
+                {
+                    Console.WriteLine(
+                        "===== HOLAHUB DEVELOPMENT =====");
+                    Console.WriteLine(
+                        $"Verification code for updated email: {code}");
+                    Console.WriteLine(
+                        "===============================");
+                }
+                else
+                {
+                    bool isEmailSent = await _emailService.SendEmailAsync(
+                        newEmail,
+                        "HolaHub - Verify your new email",
+                        $"Your verification code is: <b>{code}</b>"
+                    );
+
+                    if (!isEmailSent)
+                    {
+                        throw new Exception(
+                            "שליחת מייל האימות נכשלה.");
+                    }
+                }
             }
 
             _UsersRepository.Update(existingUser);
 
             return _mapper.Map<ShowUserDTO>(existingUser);
         }
-
         public bool DeleteUser(int id)
         {
             return _UsersRepository.Delete(id);
@@ -239,6 +272,81 @@ namespace BLL.Services
                 userId,
                 levelId,
                 ct);
+        }
+        // בקשת שחזור סיסמה (שליחת קוד בן 6 ספרות)
+        public async Task ForgotPassword(ForgotPasswordDTO dto)
+        {
+            var email=dto.UserEmail.Trim().ToLowerInvariant();
+
+            var user = _UsersRepository.GetByEmail(email);
+
+            if (user == null)
+                return;
+
+            // יצירת קוד בן שש ספרות -
+            string code = RandomNumberGenerator.GetInt32(100000, 1000000).ToString();
+
+            user.VerificationCode = code;
+            user.VerificationCodeExpiresAt = DateTime.UtcNow.AddMinutes(10);
+
+            _UsersRepository.Update(user);
+
+            if (_environment.IsDevelopment())
+            {
+                Console.WriteLine("===== HOLAHUB DEVELOPMENT =====");
+                Console.WriteLine($"Password reset code: {code}");
+                Console.WriteLine("===============================");
+            }
+            else
+            {
+                bool isEmailSent = await _emailService.SendEmailAsync(
+                    email,
+                    "HolaHub - Reset your password",
+                    $"Your password reset code is: <b>{code}</b>"
+                );
+
+                if (!isEmailSent)
+                {
+                    throw new Exception(
+                        "שליחת מייל שחזור הסיסמה נכשלה.");
+                }
+            }
+        }
+
+        // איפוס סיסמה באמצעות הקוד
+        public bool ResetPassword(ResetPasswordDTO dto)
+        {
+            var email = dto.UserEmail.Trim().ToLowerInvariant();
+
+            var user = _UsersRepository.GetByEmail(email);
+
+            if (user == null)
+                throw new InvalidOperationException(
+                    "המשתמש לא נמצא");
+
+            if (user.VerificationCodeExpiresAt == null ||
+                user.VerificationCodeExpiresAt < DateTime.UtcNow)
+            {
+                throw new InvalidOperationException(
+                    "פג תוקפו של הקוד. יש לבקש קוד חדש.");
+            }
+
+            if (user.VerificationCode != dto.Code.Trim())
+            {
+                throw new InvalidOperationException(
+                    "קוד האימות שגוי.");
+            }
+
+            // הצפנת הסיסמה החדשה
+            user.UserPassword = _hasher.HashPassword(user, dto.NewPassword);
+
+            // ניקוי הקוד כדי שיהיה חד-פעמי
+            user.VerificationCode = null;
+            user.VerificationCodeExpiresAt = null;
+
+            _UsersRepository.Update(user);
+
+            return true;
         }
     }
 }

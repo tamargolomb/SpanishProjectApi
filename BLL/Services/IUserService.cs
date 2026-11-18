@@ -14,9 +14,11 @@ namespace BLL.Services
         AuthResponseDto? Login(LoginUserDTO dto);
         List<ShowUserDTO> GetAllUsers();
         ShowUserDTO? GetByUserId(int id);
-        ShowUserDTO UpdateUser(int id, UpdateUserDTO dto);
+        Task<ShowUserDTO?> UpdateUser(int id, UpdateUserDTO dto);
         bool DeleteUser(int id);
         Task<bool> UpdateUserLevelAsync(int userId,int levelId,CancellationToken ct);
         AuthResponseDto VerifyCodeAndLogin(VerifyCodeDTO dto);
+        bool ResetPassword(ResetPasswordDTO dto);
+        Task ForgotPassword(ForgotPasswordDTO dto);
     }
 }

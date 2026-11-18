@@ -13,7 +13,7 @@ namespace projectApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
+
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -175,123 +175,31 @@ namespace projectApi.Controllers
             return Ok(user);
         }
 
+        [Authorize]
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO dto)
+        {
+            await _userService.ForgotPassword(dto);
 
+            return Ok(new { message = "אם האימייל קיים במערכת, נשלח אליו קוד שחזור." });
+        }
 
+        [Authorize]
+        [HttpPost("reset-password")]
+        public IActionResult ResetPassword([FromBody] ResetPasswordDTO dto)
+        {
+            var result = _userService.ResetPassword(dto);
 
+            if (!result)
+                return BadRequest(new { message = "איפוס הסיסמה נכשל." });
 
-
-
-
-        //// GET: api/User
-        //[HttpGet]
-        //public async Task<ActionResult<List<ShowUserDTO>>> GetUsers()
-        //{
-        //    var users = await _context.Users
-        //        .Include(u => u.Level)
-        //        .ToListAsync();
-
-        //    return Ok(_mapper.Map<List<ShowUserDTO>>(users));
-        //}
-
-        //// GET: api/User/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<ShowUserDTO>> GetUser(int id)
-        //{
-        //    var user = await _context.Users
-        //        .Include(u => u.Level)
-        //        .FirstOrDefaultAsync(u => u.UserId == id);
-
-        //    if (user == null)
-        //        return NotFound("המשתמש לא נמצא");
-
-        //    return Ok(_mapper.Map<ShowUserDTO>(user));
-        //}
-
-        //// POST: api/User/register
-        //[HttpPost("register")]
-        //public async Task<ActionResult<ShowUserDTO>> Register(
-        //    [FromBody] AddUserDTO dto)
-        //{
-        //    var emailExists = await _context.Users
-        //        .AnyAsync(u => u.UserEmail == dto.UserEmail);
-
-        //    if (!_userService.Register(dto))
-        //        return Conflict("Email is already registered.");
-
-
-        //    var user = _mapper.Map<Users>(dto);
-
-        //    user.JoinDate = DateTime.UtcNow;
-        //    user.Score = 0;
-
-        //    _context.Users.Add(user);
-        //    await _context.SaveChangesAsync();
-
-        //    var result = _mapper.Map<ShowUserDTO>(user);
-
-        //    return CreatedAtAction(
-        //        nameof(GetUser),
-        //        new { id = user.UserId },
-        //        result);
-
-        //}
-
-        //// POST: api/User/login
-        //[HttpPost("login")]
-        //public async Task<ActionResult<AuthResponseDto>> Login(
-        //    [FromBody] LoginUserDTO dto)
-        //{
-        //    var user = await _context.Users
-        //        .Include(u => u.Level)
-        //        .FirstOrDefaultAsync(u =>
-        //            u.UserEmail == dto.UserEmail &&
-        //            u.UserPassword == dto.UserPassword);
-
-        //    if (user == null)
-        //        return Unauthorized("האימייל או הסיסמה אינם נכונים");
-
-        //    return Ok(_mapper.Map<ShowUserDTO>(user));
-        //}
-
-        //// PUT: api/User/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateUser(
-        //    int id,
-        //    [FromBody] UpdateUserDTO dto)
-        //{
-        //    var user = await _context.Users.FindAsync(id);
-
-        //    if (user == null)
-        //        return NotFound("המשתמש לא נמצא");
-
-        //    var emailExists = await _context.Users
-        //        .AnyAsync(u =>
-        //            u.UserEmail == dto.UserEmail &&
-        //            u.UserId != id);
-
-        //    if (emailExists)
-        //        return BadRequest("כתובת האימייל כבר משויכת למשתמש אחר");
-
-        //    _mapper.Map(dto, user);
-
-        //    await _context.SaveChangesAsync();
-
-        //    return NoContent();
-        //}
-
-        //// DELETE: api/User/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteUser(int id)
-        //{
-        //    var user = await _context.Users.FindAsync(id);
-
-        //    if (user == null)
-        //        return NotFound("המשתמש לא נמצא");
-
-        //    _context.Users.Remove(user);
-        //    await _context.SaveChangesAsync();
-
-        //    return NoContent();
-        //}
+            return Ok(new { message = "הסיסמה אופסה בהצלחה!" });
+        }
     }
 }
+
+
+
+
+
+        

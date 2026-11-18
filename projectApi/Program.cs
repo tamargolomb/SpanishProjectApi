@@ -15,12 +15,13 @@ using OpenAI;
 using projectApi.Filters;
 using System.ClientModel;
 using System.Text;
-using Microsoft.OpenApi;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddEndpointsApiExplorer();
 
-
+//----Swagger
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -41,7 +42,7 @@ builder.Services.AddSwaggerGen(options =>
         });
 });
 
-
+//------חיבור לקליינט- לריאקט
 
 builder.Services.AddCors(options =>
 {
@@ -82,7 +83,7 @@ builder.Services.AddChatClient(innerClient)
 
 builder.Services.AddScoped<IAgentService, AgentService>();
 
-//Jwt
+//-------Jwt
 var jwtKey = builder.Configuration["Jwt:Key"];
 if (string.IsNullOrWhiteSpace(jwtKey))
     throw new InvalidOperationException("Jwt:Key is missing. Set the environment variable Jwt__Key.");
@@ -116,7 +117,7 @@ Directory.CreateDirectory(imagesFolder);
 var filesFolder = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, builder.Configuration["FilesFolder"]));
 Directory.CreateDirectory(filesFolder);
 
-// Services
+//------Services
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<GlobalExceptionFilter>();

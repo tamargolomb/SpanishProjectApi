@@ -162,6 +162,9 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
+                    b.Property<bool>("IsEmailVerified")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("JoinDate")
                         .HasColumnType("datetime2");
 
@@ -186,6 +189,12 @@ namespace DAL.Migrations
                     b.Property<string>("UserPassword")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VerificationCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("VerificationCodeExpiresAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("UserId");
 

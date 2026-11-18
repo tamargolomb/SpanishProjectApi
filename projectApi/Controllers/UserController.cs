@@ -151,7 +151,22 @@ namespace projectApi.Controllers
             }
         }
 
+        [Authorize]
+        [HttpGet("me")]
+        public ActionResult<ShowUserDTO> GetCurrentUser()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
+            if (!int.TryParse(userIdClaim, out int userId))
+                return Unauthorized();
+
+            var user = _userService.GetByUserId(userId);
+
+            if (user == null)
+                return NotFound(new { message = "User not found." });
+
+            return Ok(user);
+        }
         [HttpGet("{id}")]
         [Authorize(Roles = "Admin")]
         public ActionResult<ShowUserDTO> GetById(int id)

@@ -131,11 +131,5 @@ namespace BLL.Services
 
             return _mapper.Map<List<ShowLessonDTO>>(lessons);
         }
-        //public List<ShowLessonDTO> SearchLessons(string text, int max)
-        //{
-        //    return _LessonsRepository.SearchByName(text, max)
-        //       .Select(r => ToDto(r))   // אותה המרה ל-DTO שיש ב-GetAllRecipes
-        //       .ToList();
-        //}
     }
 }

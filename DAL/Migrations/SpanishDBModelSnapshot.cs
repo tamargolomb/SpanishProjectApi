@@ -38,9 +38,6 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SubCategory")
-                        .HasColumnType("int");
-
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");

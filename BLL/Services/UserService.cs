@@ -66,7 +66,7 @@ namespace BLL.Services
             if (_UsersRepository.EmailExists(email))
             {
                 throw new InvalidOperationException(
-                    "כתובת האימייל כבר רשומה במערכת.");
+                    "The email address is already registered in the system.");
             }
 
             var user = new Users

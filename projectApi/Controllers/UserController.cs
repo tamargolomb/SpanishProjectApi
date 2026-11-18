@@ -181,7 +181,7 @@ namespace projectApi.Controllers
         {
             await _userService.ForgotPassword(dto);
 
-            return Ok(new { message = "אם האימייל קיים במערכת, נשלח אליו קוד שחזור." });
+            return Ok(new { message = "If the email exists in the system, a recovery code will be sent to it.." });
         }
 
         [AllowAnonymous]
@@ -191,9 +191,9 @@ namespace projectApi.Controllers
             var result = _userService.ResetPassword(dto);
 
             if (!result)
-                return BadRequest(new { message = "איפוס הסיסמה נכשל." });
+                return BadRequest(new { message = "Password reset failed!" });
 
-            return Ok(new { message = "הסיסמה אופסה בהצלחה!" });
+            return Ok(new { message = "The password has been reset successfully!" });
         }
     }
 }

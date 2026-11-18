@@ -56,7 +56,7 @@ namespace projectApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] UpdateRatingDTO dto)
         {
-            var updatedReview = _ireviewandratingservice.UpdateReview(id, dto/*, User.GetUserId()*/);
+            var updatedReview = _ireviewandratingservice.UpdateReview(id, dto, User.GetUserId());
             if (updatedReview == null)
                 return NotFound();
 

@@ -91,61 +91,111 @@ namespace BLL.Services
         }
 
 
+
         public async Task<GeneratedQuestionDto> GenerateQuestionAsync(
             string level,
-            CancellationToken ct)
+            CancellationToken ct,
+            IEnumerable<string>? previousQuestions = null)
         {
-            var messages = new List<ChatMessage>
-    {
-        new ChatMessage(ChatRole.System, SystemPrompt),
-        new ChatMessage(
-            ChatRole.User,
-            $"Generate a Spanish placement question at level {level}.")
-    };
+            var askedQuestions = previousQuestions?
+                .Where(q => !string.IsNullOrWhiteSpace(q))
+                .ToList() ?? new List<string>();
 
-            var response = await _chatClient.GetResponseAsync(
-                messages,
-                cancellationToken: ct);
-
-            var json = response.Text?.Trim()
-                ?? throw new InvalidOperationException(
-                    "The AI returned an empty response.");
-
-            if (json.StartsWith("```"))
+            for (int attempt = 1; attempt <= 4; attempt++)
             {
-                var firstLineEnd = json.IndexOf('\n');
-                var lastFence = json.LastIndexOf("```");
+                var previousQuestionsJson =
+                    JsonSerializer.Serialize(askedQuestions);
 
-                if (firstLineEnd >= 0 && lastFence > firstLineEnd)
+                var messages = new List<ChatMessage>
+        {
+            new ChatMessage(ChatRole.System, SystemPrompt),
+            new ChatMessage(
+                ChatRole.User,
+                $"""
+                Generate ONE new Spanish placement question
+                at level {level}.
+
+                Questions already asked:
+                {previousQuestionsJson}
+
+                IMPORTANT:
+                - Never repeat any previously asked question.
+                - Do not rephrase a previous question.
+                - Do not test the exact same word or concept
+                  in essentially the same way.
+                - Choose a different vocabulary item or
+                  grammar concept when possible.
+                - Return only the required JSON.
+                """)
+        };
+
+                var response = await _chatClient.GetResponseAsync(
+                    messages,
+                    cancellationToken: ct);
+
+                var json = response.Text?.Trim()
+                    ?? throw new InvalidOperationException(
+                        "The AI returned an empty response.");
+
+                if (json.StartsWith("```"))
                 {
-                    json = json.Substring(
-                        firstLineEnd + 1,
-                        lastFence - firstLineEnd - 1
-                    ).Trim();
+                    var firstLineEnd = json.IndexOf('\n');
+                    var lastFence = json.LastIndexOf("```");
+
+                    if (firstLineEnd >= 0 && lastFence > firstLineEnd)
+                    {
+                        json = json.Substring(
+                            firstLineEnd + 1,
+                            lastFence - firstLineEnd - 1
+                        ).Trim();
+                    }
                 }
-            }
 
-            var question = JsonSerializer.Deserialize<GeneratedQuestionDto>(
-                json,
-                new JsonSerializerOptions
+                var question = JsonSerializer.Deserialize<GeneratedQuestionDto>(
+                    json,
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                if (question == null ||
+                    string.IsNullOrWhiteSpace(question.Question) ||
+                    question.Options == null ||
+                    question.Options.Count != 4 ||
+                    question.Options.Any(string.IsNullOrWhiteSpace) ||
+                    question.CorrectAnswerIndex < 0 ||
+                    question.CorrectAnswerIndex > 3)
                 {
-                    PropertyNameCaseInsensitive = true
-                });
+                    throw new InvalidOperationException(
+                        "The AI generated an invalid question.");
+                }
 
-            if (question == null ||
-                string.IsNullOrWhiteSpace(question.Question) ||
-                question.Options == null ||
-                question.Options.Count != 4 ||
-                question.Options.Any(string.IsNullOrWhiteSpace) ||
-                question.CorrectAnswerIndex < 0 ||
-                question.CorrectAnswerIndex > 3)
-            {
-                throw new InvalidOperationException(
-                    "The AI generated an invalid question.");
+                var normalizedNewQuestion =
+                    NormalizeQuestion(question.Question);
+
+                var isDuplicate = askedQuestions.Any(q =>
+                    NormalizeQuestion(q) == normalizedNewQuestion);
+
+                if (!isDuplicate)
+                    return question;
+
+                askedQuestions.Add(question.Question);
             }
 
-            return question;
+            throw new InvalidOperationException(
+                "Could not generate a unique question.");
         }
+
+        private static string NormalizeQuestion(string question)
+        {
+            return new string(
+                question
+                    .Where(char.IsLetterOrDigit)
+                    .Select(char.ToLowerInvariant)
+                    .ToArray()
+            );
+        }
+
 
 
         public async Task<int> ChooseNextLevelAsync(
@@ -171,20 +221,43 @@ namespace BLL.Services
         new ChatMessage(
             ChatRole.System,
             """
+            
             You are an expert adaptive Spanish placement examiner.
 
             You receive available levels and student answer history.
 
             Evaluate performance across the entire history.
-            Consider correct answers, incorrect answers, and question difficulty.
-            Use level names and descriptions to understand the difficulty.
-            Do not assume that LevelId represents difficulty order.
-            Select only a LevelId that exists in the provided levels.
-            Never invent a level.
+
+            ANSWER EVALUATION RULES:
+            - A correct answer demonstrates knowledge.
+            - An incorrect answer indicates difficulty with the material.
+            - A selected answer of "I don't know" means the student
+              explicitly indicated they do not know the answer.
+            - Treat "I don't know" as incorrect for scoring purposes.
+            - Distinguish between an attempted incorrect answer
+              and an explicit "I don't know" response.
+            - Multiple "I don't know" answers may indicate that
+              the current difficulty is too high.
+            - Do not decrease difficulty dramatically because
+              of a single incorrect or unknown answer.
+            - Increase difficulty when the student consistently
+              demonstrates mastery.
+            - Decrease difficulty when the student repeatedly
+              struggles or selects "I don't know".
+            - Evaluate the overall pattern, not just the last answer.
+
+            LEVEL SELECTION RULES:
+            - Consider the question difficulty and performance.
+            - Use level names and descriptions to understand difficulty.
+            - Do not assume LevelId represents difficulty order.
+            - Select only a LevelId that exists in the provided levels.
+            - Never invent a level.
+
             Return only valid JSON without Markdown or explanations.
 
             Required JSON format:
             {"levelId": 1}
+            
             """
         ),
         new ChatMessage(

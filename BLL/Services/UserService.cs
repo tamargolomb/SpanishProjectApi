@@ -58,6 +58,7 @@ namespace BLL.Services
             return Convert.ToHexString(bytes);
         }
 
+
         public async Task<bool> Register(AddUserDTO dto)
         {
             var email = dto.UserEmail.Trim().ToLowerInvariant();
@@ -78,11 +79,9 @@ namespace BLL.Services
                 IsEmailVerified = false
             };
 
-            // הצפנת סיסמת המשתמש
             user.UserPassword = _hasher.HashPassword(
                 user, dto.UserPassword);
 
-            // יצירת קוד אימות בן שש ספרות
             string code = RandomNumberGenerator
                 .GetInt32(100000, 1000000)
                 .ToString();
@@ -91,40 +90,30 @@ namespace BLL.Services
             user.VerificationCodeExpiresAt =
                 DateTime.UtcNow.AddMinutes(10);
 
-            // שמירת המשתמש במסד הנתונים
             _UsersRepository.Add(user);
 
             if (_environment.IsDevelopment())
             {
-                // בסביבת פיתוח בלבד: מציגים את הקוד בקונסול
                 Console.WriteLine(
-                    "===== HOLAHUB DEVELOPMENT =====");
-
-                Console.WriteLine(
-                    $"Verification code: {code}");
-
-                Console.WriteLine(
-                    "===============================");
+                    $"Development verification code: {code}");
             }
-            else
-            {
-                // בסביבה רגילה שולחים מייל אמיתי
-                bool isEmailSent =
-                    await _emailService.SendEmailAsync(
-                        email,
-                        "HolaHub - Verify your email",
-                        $"Your verification code is: <b>{code}</b>"
-                    );
 
-                if (!isEmailSent)
-                {
-                    throw new Exception(
-                        "שליחת מייל האימות נכשלה.");
-                }
+            bool isEmailSent = await _emailService.SendEmailAsync(
+                email,
+                "HolaHub - Verify your email",
+                $"Your verification code is: {code}"
+            );
+
+            Console.WriteLine($"Email service result: {isEmailSent}");
+            if (!isEmailSent)
+            {
+                throw new Exception(
+                    "שליחת מייל האימות נכשלה.");
             }
 
             return true;
         }
+
 
         public AuthResponseDto VerifyCodeAndLogin(VerifyCodeDTO dto)
         {
@@ -302,27 +291,24 @@ namespace BLL.Services
 
             _UsersRepository.Update(user);
 
-            _cache.Set(cacheKey, true, TimeSpan.FromSeconds(60));
-
             if (_environment.IsDevelopment())
             {
                 Console.WriteLine("===== HOLAHUB DEVELOPMENT =====");
                 Console.WriteLine($"Password reset code: {code}");
                 Console.WriteLine("===============================");
             }
-            else
-            {
-                bool isEmailSent = await _emailService.SendEmailAsync(
-                    email,
-                    "HolaHub - Reset your password",
-                    $"Your password reset code is: <b>{code}</b>"
-                );
 
-                if (!isEmailSent)
-                    throw new Exception("שליחת מייל שחזור הסיסמה נכשלה.");
-            }
+            bool isEmailSent = await _emailService.SendEmailAsync(
+                email,
+                "HolaHub - Reset your password",
+                $"Your password reset code is: {code}"
+            );
+
+            if (!isEmailSent)
+                throw new Exception("שליחת מייל שחזור הסיסמה נכשלה.");
+
+            _cache.Set(cacheKey, true, TimeSpan.FromSeconds(60));
         }
-
 
 
         // איפוס סיסמה באמצעות הקוד

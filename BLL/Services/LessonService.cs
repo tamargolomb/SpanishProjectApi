@@ -134,8 +134,12 @@ namespace BLL.Services
 
             if (deleted)
             {
-                if (!string.IsNullOrEmpty(imageName))
-                    _imageService.Delete(imageName);
+                //למנוע מחיקה של תמונת הברירת מחדל
+                if (!string.IsNullOrEmpty(lesson.image) &&
+                    lesson.image != "default-lesson.png")
+                {
+                    _imageService.Delete(lesson.image);
+                }
 
                 if (!string.IsNullOrEmpty(fileName))
                     _fileService.Delete(fileName);

@@ -13,9 +13,17 @@ namespace DAL.Repositories
         {
             _context = context;
         }
-        public void Add(Lesson Lesson)
+        public void Add(Lesson lesson)
         {
-            _context.Lessons.Add(Lesson);
+            var user = _context.Users.Find(lesson.UserId);
+
+            if (user == null)
+                throw new InvalidOperationException("User not found");
+
+            _context.Lessons.Add(lesson);
+
+            user.Score += 10;
+
             _context.SaveChanges();
         }
         public List<Lesson> GetAll()

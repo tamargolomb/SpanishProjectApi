@@ -13,9 +13,17 @@ namespace DAL.Repositories
         {
             _context = context;
         }
-        public void Add(ReviewsAndRatings ReviewAndRating)
+        public void Add(ReviewsAndRatings reviewAndRating)
         {
-            _context.ReviewsAndRatings.Add(ReviewAndRating);
+            var user = _context.Users.Find(reviewAndRating.UserId);
+
+            if (user == null)
+                throw new InvalidOperationException("User not found");
+
+            _context.ReviewsAndRatings.Add(reviewAndRating);
+
+            user.Score += 5;
+
             _context.SaveChanges();
         }
         public List<ReviewsAndRatings> GetAll()

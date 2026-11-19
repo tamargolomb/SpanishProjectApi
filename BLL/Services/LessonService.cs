@@ -19,8 +19,9 @@ namespace BLL.Services
         private readonly IFileService _fileService;
         private readonly ICategoriesRepository _categoryRepository;
         private readonly ILevelsRepository _levelRepository;
-        
-        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService, ICategoriesRepository categoryRepository, ILevelsRepository levelRepository,IFileService fileService)
+        private readonly IUsersRepository _userRepository;
+
+        public LessonService(ILessonsRepository lessonsRepository, IMapper mapper, IImageService imageService, ICategoriesRepository categoryRepository, ILevelsRepository levelRepository,IFileService fileService, IUsersRepository userRepository)
         {
             _LessonsRepository = lessonsRepository;
             _mapper = mapper;
@@ -28,6 +29,7 @@ namespace BLL.Services
             _fileService = fileService;
             _categoryRepository = categoryRepository;
             _levelRepository = levelRepository;
+            _userRepository = userRepository;
         }
         public ShowLessonDTO AddLesson(AddLessonDTO lessonDTO, int userId)
         {
@@ -111,7 +113,16 @@ namespace BLL.Services
         }
         public bool DeleteLesson(int id, int userId)
         {
-            var lesson = _LessonsRepository.GetOwned(id, userId);
+            Lesson? lesson=null;
+            var user = _userRepository.GetById(userId);
+            if (user?.Role == "Admin")
+            {
+                 lesson = _LessonsRepository.GetById(id);
+            }
+            else
+            {
+                lesson = _LessonsRepository.GetOwned(id, userId);
+            }
 
             if (lesson is null)
                 return false;

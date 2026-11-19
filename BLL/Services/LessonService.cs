@@ -46,6 +46,10 @@ namespace BLL.Services
                 {
                     lesson.image = _imageService.Save(lessonDTO.image);
                 }
+                else//אם המשתמש לא העלה תמונה , נשתמש בתמונה ברירת מחדל
+                {
+                    lesson.image = "default-lesson.png";
+                }
 
                 if (lessonDTO.File != null)
                 {
@@ -56,8 +60,13 @@ namespace BLL.Services
             }
             catch
             {
-                if (lesson.image != null)
-                    _imageService.Delete(lesson.image);
+                //למנוע מחיקה של תמונת הברירת מחדל
+                    if (!string.IsNullOrEmpty(lesson.image) &&
+                        lesson.image != "default-lesson.png")
+                    {
+                        _imageService.Delete(lesson.image);
+                    }
+
 
                 if (lesson.FileUrl != null)
                     _fileService.Delete(lesson.FileUrl);
